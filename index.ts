@@ -1,1 +1,3 @@
-export * from './public_api';
+// Public classes.
+export { XivapiClientModule, XIVAPI_KEY } from './src/xivapi-client.module';
+export { XivapiService } from './src/xivapi.service';
