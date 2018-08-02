@@ -1,0 +1,96 @@
+defaults: &defaults
+    working_directory: /tmp/angular-client
+    docker:
+    - image: circleci/node:9.11-stretch-browsers
+
+version: 2
+jobs:
+    setup:
+        <<: *defaults
+        steps:
+        - checkout
+        - run:
+              name: Show current branch
+              command: echo ${CIRCLE_BRANCH}
+        - restore_cache:
+              keys:
+              - v1-dependencies-{{ checksum "package.json" }}
+              - v1-dependencies-
+        - run:
+              name: Install local dependencies
+              command: npm install
+        - save_cache:
+              key: v1-dependencies-{{ checksum "package.json" }}
+              paths:
+              - node_modules
+        - persist_to_workspace:
+              root: /tmp
+              paths:
+              - angular-client/*
+
+    test:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+              at: /tmp
+        - run:
+              name: Testing
+              command: npm run test
+        - run:
+              name: Codecov upload
+              command: npm run codecov
+
+    build:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+              at: /tmp
+        - run:
+              name: Building
+              command: npm run build
+        - save_cache:
+              key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+              paths:
+              - dist
+        - persist_to_workspace:
+              root: /tmp
+              paths:
+              - angular-client/*
+
+    deploy-docs:
+        <<: *defaults
+        steps:
+        - attach_workspace:
+            at: /tmp
+        - run:
+            name: Generating docs
+            command: npm run docs:generate
+        - deploy:
+            name: Deploying docs
+            command: ./deploy-pages.sh docs
+
+
+workflows:
+    version: 2
+    flow:
+        jobs:
+        - setup:
+            filters:
+              branches:
+                  ignore: gh-pages
+        - test:
+            filters:
+                branches:
+                    ignore: gh-pages
+          requires:
+          - setup
+        - build:
+            filters:
+                branches:
+                    ignore: gh-pages
+              requires:
+              - setup
+        - deploy-docs:
+            filters:
+                branches:
+                    only: master
