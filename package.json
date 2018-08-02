@@ -1,0 +1,89 @@
+{
+  "name": "@xivapi/angular-client",
+  "version": "0.1.0",
+  "description": "xivapi client library (service and models) for angular applications",
+  "main": "./bundles/ng-serializer.umd.js",
+  "module": "./modules/ng-serializer.es5.js",
+  "es2015": "./modules/ng-serializer.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:clean": "del-cli dist",
+    "test": "karma start",
+    "commit": "git-cz",
+    "prerelease": "npm test",
+    "release:git": "git add package.json && standard-version && git push --follow-tags origin master",
+    "release:npm": "npm run build && npm publish dist",
+    "release": "npm run release:git && npm run release:npm",
+    "postrelease": "npm run build:clean",
+    "codecov": "cat coverage/lcov.info | codecov"
+  },
+  "typings": "./angular-client.d.ts",
+  "author": "Supamiu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xivapi/angular-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xivapi/angular-client/issues"
+  },
+  "homepage": "https://github.com/xivapi/angular-client#readme",
+  "keywords": [
+    "xivapi",
+    "angular"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "@angular/animations": "^6.1.0",
+    "@angular/common": "^6.1.0",
+    "@angular/compiler": "^6.1.0",
+    "@angular/compiler-cli": "^6.1.0",
+    "@angular/core": "^6.1.0",
+    "@angular/platform-browser": "^6.1.0",
+    "@angular/platform-browser-dynamic": "^6.1.0",
+    "@angular/platform-server": "^6.1.0",
+    "@types/jasmine": "2.6.0",
+    "@types/node": "8.0.1",
+    "chalk": "1.1.3",
+    "codecov": "2.1.0",
+    "codelyzer": "3.1.1",
+    "commitizen": "2.9.6",
+    "core-js": "2.4.1",
+    "cz-conventional-changelog": "2.0.0",
+    "del-cli": "1.1.0",
+    "istanbul-instrumenter-loader": "3.0.0",
+    "jasmine-core": "2.8.0",
+    "karma": "1.7.1",
+    "karma-coverage-istanbul-reporter": "1.3.0",
+    "karma-chrome-launcher": "2.2.0",
+    "karma-jasmine": "1.1.0",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-spec-reporter": "0.0.31",
+    "karma-webpack": "2.0.4",
+    "reflect-metadata": "0.1.10",
+    "rollup": "0.43.0",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rxjs": "^6.0.0",
+    "shelljs": "0.7.8",
+    "sorcery": "0.10.0",
+    "source-map-loader": "0.2.1",
+    "standard-version": "4.2.0",
+    "ts-loader": "2.1.0",
+    "tslint": "5.4.3",
+    "tslint-loader": "3.5.3",
+    "typescript": "^2.9.2",
+    "uglify-js": "2.8.29",
+    "webpack": "3.0.0",
+    "yargs": "9.0.1",
+    "zone.js": "^0.8.26"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}

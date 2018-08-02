@@ -1,3 +1,18 @@
+.idea/
+.DS_Store
+node_modules/
+coverage/
+npm-debug.log
+dist/
+*.js
+*.js.map
+!/scripts/map-sources.js
+!/karma.conf.js
+!/rollup.config.js
+!/spec.bundle.js
+!/build.js
+
+
 # Logs
 logs
 *.log
