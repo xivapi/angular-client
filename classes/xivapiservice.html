@@ -119,7 +119,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L18">xivapi.service.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L13">xivapi.service.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -144,7 +144,7 @@
 					<div class="tsd-signature tsd-kind-icon">api<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L20">xivapi.service.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L15">xivapi.service.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -154,9 +154,14 @@
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://xivapi.com&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L18">xivapi.service.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L13">xivapi.service.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Base url of xivapi.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -171,19 +176,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L23">xivapi.service.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L25">xivapi.service.ts:25</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Makes a request on a given endpoint with an id.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>endpoint: <a href="../enums/xivapiendpoint.html" class="tsd-signature-type">XivapiEndpoint</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The endpoint to use for the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5>id: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The id of the resource for the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapirequestoptions.html" class="tsd-signature-type">XivapiRequestOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options of the request, optional.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -200,19 +219,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L35">xivapi.service.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L62">xivapi.service.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets a character using the /Character endpoint.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>lodestoneId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>LodestoneID of the character to get.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapicharacteroptions.html" class="tsd-signature-type">XivapiCharacterOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options of the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">"friends"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"achievements"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"gearsets"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specific details you want to get.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -223,25 +256,39 @@
 					<a name="getfreecompany" class="tsd-anchor"></a>
 					<h3>get<wbr>Free<wbr>Company</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Free<wbr>Company<span class="tsd-signature-symbol">(</span>lodestoneId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapifreecompanyoptions.html" class="tsd-signature-type">XivapiFreeCompanyOptions</a>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"members"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Free<wbr>Company<span class="tsd-signature-symbol">(</span>lodestoneId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"members"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L40">xivapi.service.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L75">xivapi.service.ts:75</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets a free company using the /FreeCompany endpoint.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>lodestoneId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>LodestoneID of the free company to get.</p>
+									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapifreecompanyoptions.html" class="tsd-signature-type">XivapiFreeCompanyOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options of the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">"members"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specific details you want to get.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -252,25 +299,39 @@
 					<a name="getlinkshell" class="tsd-anchor"></a>
 					<h3>get<wbr>Linkshell</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Linkshell<span class="tsd-signature-symbol">(</span>lodestoneId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapifreecompanyoptions.html" class="tsd-signature-type">XivapiFreeCompanyOptions</a>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Linkshell<span class="tsd-signature-symbol">(</span>lodestoneId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a>, details<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L45">xivapi.service.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L87">xivapi.service.ts:87</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets a linkshell using the /Linkshell endpoint.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>lodestoneId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>LodestoneID of the linkshell to get.</p>
+									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapifreecompanyoptions.html" class="tsd-signature-type">XivapiFreeCompanyOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options of the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> details: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"record"</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Specific details you want to get.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -287,16 +348,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L27">xivapi.service.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L35">xivapi.service.ts:35</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Makes a request to a given endpoint to list resources available.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>endpoint: <a href="../enums/xivapiendpoint.html" class="tsd-signature-type">XivapiEndpoint</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The endpoint to use for the request.</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapirequestoptions.html" class="tsd-signature-type">XivapiRequestOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options of the request, optional.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/xivapilist.html" class="tsd-signature-type">XivapiList</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -313,13 +385,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L50">xivapi.service.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L96">xivapi.service.ts:96</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the list of patches using the /PatchList endpoint.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options of the request.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -336,7 +416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L54">xivapi.service.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L100">xivapi.service.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -362,22 +442,27 @@
 					<a name="search" class="tsd-anchor"></a>
 					<h3>search</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>searchString<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapisearchoptions.html" class="tsd-signature-type">XivapiSearchOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/xivapisearchoptions.html" class="tsd-signature-type">XivapiSearchOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/2e95b7a/src/xivapi.service.ts#L31">xivapi.service.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/5ab11eb/src/xivapi.service.ts#L44">xivapi.service.ts:44</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Searches for something in the api using the /Search endpoint.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>searchString: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapisearchoptions.html" class="tsd-signature-type">XivapiSearchOptions</a></h5>
+									<h5>options: <a href="../interfaces/xivapisearchoptions.html" class="tsd-signature-type">XivapiSearchOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Search options, see <a href="http://xivapi.com/docs/Search">http://xivapi.com/docs/Search</a> for more details.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -456,9 +541,6 @@
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/xivapicharacteroptions.html" class="tsd-kind-icon">Xivapi<wbr>Character<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapifreecompanyoptions.html" class="tsd-kind-icon">Xivapi<wbr>Free<wbr>Company<wbr>Options</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="../interfaces/xivapilist.html" class="tsd-kind-icon">Xivapi<wbr>List</a>
 					</li>
@@ -469,10 +551,10 @@
 						<a href="../interfaces/xivapirequestoptions.html" class="tsd-kind-icon">Xivapi<wbr>Request<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
+						<a href="../interfaces/xivapisearchfilter.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Filter</a>
 					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#xivapi_key" class="tsd-kind-icon">XIVAPI_<wbr>KEY</a>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
 					</li>
 				</ul>
 			</nav>
