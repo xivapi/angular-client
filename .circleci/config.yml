@@ -3,6 +3,7 @@ defaults: &defaults
     docker:
     - image: circleci/node:9.11-stretch-browsers
 
+
 version: 2
 jobs:
     setup:
@@ -28,6 +29,7 @@ jobs:
               paths:
               - angular-client/*
 
+
     test:
         <<: *defaults
         steps:
@@ -39,6 +41,7 @@ jobs:
         - run:
               name: Codecov upload
               command: npm run codecov
+
 
     build:
         <<: *defaults
@@ -57,17 +60,18 @@ jobs:
               paths:
               - angular-client/*
 
+
     deploy-docs:
         <<: *defaults
         steps:
         - attach_workspace:
-            at: /tmp
+              at: /tmp
         - run:
-            name: Generating docs
-            command: npm run docs:generate
+              name: Generating docs
+              command: npm run docs:generate
         - deploy:
-            name: Deploying docs
-            command: ./deploy-pages.sh docs
+              name: Deploying docs
+              command: ./deploy-pages.sh docs
 
 
 workflows:
@@ -75,22 +79,22 @@ workflows:
     flow:
         jobs:
         - setup:
-            filters:
-              branches:
-                  ignore: gh-pages
+              filters:
+                  branches:
+                      ignore: gh-pages
         - test:
-            filters:
-                branches:
-                    ignore: gh-pages
+              filters:
+                  branches:
+                      ignore: gh-pages
           requires:
           - setup
         - build:
-            filters:
-                branches:
-                    ignore: gh-pages
-              requires:
-              - setup
+              filters:
+                  branches:
+                      ignore: gh-pages
+                  requires:
+                  - setup
         - deploy-docs:
-            filters:
-                branches:
-                    only: master
+              filters:
+                  branches:
+                      only: master
