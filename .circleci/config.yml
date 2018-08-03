@@ -79,22 +79,24 @@ workflows:
     flow:
         jobs:
         - setup:
-              filters:
-                  branches:
-                      ignore: gh-pages
+            filters:
+                branches:
+                    ignore: gh-pages
         - test:
-              filters:
-                  branches:
-                      ignore: gh-pages
-          requires:
-          - setup
+            requires:
+            - setup
+            filters:
+                branches:
+                    ignore: gh-pages
         - build:
-              filters:
-                  branches:
-                      ignore: gh-pages
-                  requires:
-                  - setup
+            requires:
+            - setup
+            filters:
+                branches:
+                    ignore: gh-pages
         - deploy-docs:
+              requires:
+              - setup
               filters:
                   branches:
                       only: master
