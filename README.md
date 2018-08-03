@@ -2,9 +2,12 @@
 
 [![CircleCI](https://circleci.com/gh/xivapi/angular-client/tree/master.svg?style=shield)](https://circleci.com/gh/xivapi/angular-client/tree/master)
 
-## Api documentation
+## Documentation
 
 Visit https://xivapi.com/docs for documentation about the web api mapped by this client.
+
+Further documentation for this library available on documentation website: https://xivapi.github.io/angular-client/
+
 
 ## Quick start
 
@@ -43,7 +46,3 @@ export class FooComponent {
     }
 }
 ```
-
-## Documentation
-
-Further documentation available on documentation website: https://xivapi.github.io/angular-client/

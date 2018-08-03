@@ -1,9 +1,21 @@
+/**
+ * Lists all the indexes one can search on /Search endpoint.
+ */
 export enum SearchIndex {
     ACHIEVEMENT = 'achievement',
     ACTION = 'action',
-    BNPCNAME = 'bnpcname', // Enemies
-    COMPANION = 'companion', // Minions
-    ENPCRESIDENT = 'enpcresident', // NPCs
+    /**
+     * Enemies index.
+     */
+    BNPCNAME = 'bnpcname',
+    /**
+     * Minions index.
+     */
+    COMPANION = 'companion',
+    /**
+     * NPCs index.
+     */
+    ENPCRESIDENT = 'enpcresident',
     EMOTE = 'emote',
     FATE = 'fate',
     INSTANCECONTENT = 'instancecontent',
