@@ -1,6 +1,7 @@
 # angular-client
 
 [![CircleCI](https://circleci.com/gh/xivapi/angular-client/tree/master.svg?style=shield)](https://circleci.com/gh/xivapi/angular-client/tree/master)
+[![npm version](https://badge.fury.io/js/%40xivapi%2Fangular-client.svg)](https://www.npmjs.com/package/@xivapi/angular-client)
 
 ## Documentation
 
