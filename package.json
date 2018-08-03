@@ -1,6 +1,6 @@
 {
   "name": "@xivapi/angular-client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "xivapi client library (service and models) for angular applications",
   "main": "./bundles/ng-serializer.umd.js",
   "module": "./modules/ng-serializer.es5.js",
@@ -89,5 +89,8 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "directories": {
+    "test": "test"
   }
 }

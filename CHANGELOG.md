@@ -1,0 +1,18 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="0.2.0"></a>
+# 0.2.0 (2018-08-03)
+
+
+### Bug Fixes
+
+* fixed an error with AOT build ([ff4ec8e](https://github.com/xivapi/angular-client/commit/ff4ec8e))
+
+
+### Features
+
+* implement new filters in search request ([a15834f](https://github.com/xivapi/angular-client/commit/a15834f))
+* implemented all endpoints described in docs as of v1.27.8 ([170394b](https://github.com/xivapi/angular-client/commit/170394b))
+* support for new filter operators ([6ac0a9e](https://github.com/xivapi/angular-client/commit/6ac0a9e))
