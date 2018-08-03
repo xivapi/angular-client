@@ -1,15 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {
-    XivapiCharacterOptions,
-    XivapiEndpoint,
-    XivapiFreeCompanyOptions,
-    XivapiList,
-    XivapiOptions,
-    XivapiRequestOptions,
-    XivapiSearchOptions
-} from './model';
+import { XivapiCharacterOptions, XivapiEndpoint, XivapiList, XivapiOptions, XivapiRequestOptions, XivapiSearchOptions } from './model';
 import { XIVAPI_KEY } from './xivapi-client.module';
 
 @Injectable()
@@ -92,7 +84,7 @@ export class XivapiService {
      * @param options Options of the request.
      * @param details Specific details you want to get.
      */
-    public getLinkshell(lodestoneId: number, options?: XivapiFreeCompanyOptions,
+    public getLinkshell(lodestoneId: number, options?: XivapiOptions,
                         details?: 'record'): Observable<any> {
         return this.request<any>(`${XivapiService.API_BASE_URL}/Linkshell/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
