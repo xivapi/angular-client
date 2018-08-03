@@ -70,7 +70,7 @@ jobs:
               name: Generating docs
               command: npm run docs:generate
         - run:
-              name: Avoid hosts unknown for github
+              name: Avoid hosts unknown for github.com
               command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
         - deploy:
               name: Deploying docs
