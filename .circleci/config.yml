@@ -71,7 +71,7 @@ jobs:
               command: npm run docs:generate
         - deploy:
               name: Deploying docs
-              command: ./deploy-pages.sh docs
+              command: ./scripts/deploy-pages.sh docs
 
 
 workflows:
