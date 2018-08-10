@@ -3,6 +3,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { XivapiCharacterOptions, XivapiEndpoint, XivapiList, XivapiOptions, XivapiRequestOptions, XivapiSearchOptions } from './model';
 import { XIVAPI_KEY } from './xivapi-client.module';
+import { CharacterResponse } from './model/schema/character/character-response';
+import { CharacterVerification } from './model/schema/character/character-verification';
 
 @Injectable()
 export class XivapiService {
@@ -60,8 +62,18 @@ export class XivapiService {
      * @param details Specific details you want to get.
      */
     public getCharacter(lodestoneId: number, options?: XivapiCharacterOptions,
-                        details?: 'friends' | 'achievements' | 'gearsets' | 'record'): Observable<any> {
+                        details?: 'Friends' | 'Achievements' | 'Gearsets' | 'Record' | 'FreeCompany'): Observable<CharacterResponse> {
         return this.request<any>(`${XivapiService.API_BASE_URL}/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
+    }
+
+    /**
+     * Gets character verification informations based on lodestoneId.
+     *
+     * @param lodestoneId LodestoneID of the character to get.
+     * @param options Options of the request.
+     */
+    public verifyCharacter(lodestoneId: number, options?: XivapiCharacterOptions): Observable<CharacterVerification> {
+        return this.request<any>(`${XivapiService.API_BASE_URL}/Character/${lodestoneId}/Verification`, options);
     }
 
 

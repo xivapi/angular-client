@@ -8,3 +8,4 @@ export { XivapiOptions } from './xivapi-options';
 export { XivapiRequestOptions } from './xivapi-request-options';
 export { XivapiSearchFilter } from './xivapi-search-filter';
 export { XivapiSearchOptions } from './xivapi-search-options';
+export * from './schema/index';
