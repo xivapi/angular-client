@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pagination | @xivapi/angular-client</title>
+	<title>ClassJob | @xivapi/angular-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="pagination.html">Pagination</a>
+					<a href="classjob.html">ClassJob</a>
 				</li>
 			</ul>
-			<h1>Interface Pagination</h1>
+			<h1>Interface ClassJob</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Pagination</span>
+						<span class="target">ClassJob</span>
 					</li>
 				</ul>
 			</section>
@@ -81,13 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page" class="tsd-kind-icon">page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_next" class="tsd-kind-icon">page_<wbr>next</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_prev" class="tsd-kind-icon">page_<wbr>prev</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_total" class="tsd-kind-icon">page_<wbr>total</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results" class="tsd-kind-icon">results</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results_per_page" class="tsd-kind-icon">results_<wbr>per_<wbr>page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results_total" class="tsd-kind-icon">results_<wbr>total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#classid" class="tsd-kind-icon">ClassID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#explevel" class="tsd-kind-icon">Exp<wbr>Level</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#explevelmax" class="tsd-kind-icon">Exp<wbr>Level<wbr>Max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#expleveltogo" class="tsd-kind-icon">Exp<wbr>Level<wbr>Togo</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#jobid" class="tsd-kind-icon">JobID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="classjob.html#level" class="tsd-kind-icon">Level</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,109 +95,64 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page" class="tsd-anchor"></a>
-					<h3>page</h3>
-					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="classid" class="tsd-anchor"></a>
+					<h3>ClassID</h3>
+					<div class="tsd-signature tsd-kind-icon">ClassID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L5">model/pagination.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L2">model/schema/character/class-job.ts:2</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Current page number.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_next" class="tsd-anchor"></a>
-					<h3>page_<wbr>next</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="explevel" class="tsd-anchor"></a>
+					<h3>Exp<wbr>Level</h3>
+					<div class="tsd-signature tsd-kind-icon">Exp<wbr>Level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L10">model/pagination.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L3">model/schema/character/class-job.ts:3</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Next page number, equals false if there&#39;s no next page (when you&#39;re on the last one).</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_prev" class="tsd-anchor"></a>
-					<h3>page_<wbr>prev</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>prev<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="explevelmax" class="tsd-anchor"></a>
+					<h3>Exp<wbr>Level<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">Exp<wbr>Level<wbr>Max<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L15">model/pagination.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L4">model/schema/character/class-job.ts:4</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Previous page number, equals false if there&#39;s no previous page (when you&#39;re on the first one)</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_total" class="tsd-anchor"></a>
-					<h3>page_<wbr>total</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="expleveltogo" class="tsd-anchor"></a>
+					<h3>Exp<wbr>Level<wbr>Togo</h3>
+					<div class="tsd-signature tsd-kind-icon">Exp<wbr>Level<wbr>Togo<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L20">model/pagination.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L5">model/schema/character/class-job.ts:5</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of pages.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results" class="tsd-anchor"></a>
-					<h3>results</h3>
-					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="jobid" class="tsd-anchor"></a>
+					<h3>JobID</h3>
+					<div class="tsd-signature tsd-kind-icon">JobID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L25">model/pagination.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L6">model/schema/character/class-job.ts:6</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of results in the current page.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results_per_page" class="tsd-anchor"></a>
-					<h3>results_<wbr>per_<wbr>page</h3>
-					<div class="tsd-signature tsd-kind-icon">results_<wbr>per_<wbr>page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="level" class="tsd-anchor"></a>
+					<h3>Level</h3>
+					<div class="tsd-signature tsd-kind-icon">Level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L30">model/pagination.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/class-job.ts#L7">model/schema/character/class-job.ts:7</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Current maximum amount of results per page.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results_total" class="tsd-anchor"></a>
-					<h3>results_<wbr>total</h3>
-					<div class="tsd-signature tsd-kind-icon">results_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L35">model/pagination.ts:35</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of results.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -236,9 +190,33 @@
 					<li class=" tsd-kind-interface">
 						<a href="characterverification.html" class="tsd-kind-icon">Character<wbr>Verification</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="classjob.html" class="tsd-kind-icon">Class<wbr>Job</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#classid" class="tsd-kind-icon">ClassID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#explevel" class="tsd-kind-icon">Exp<wbr>Level</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#explevelmax" class="tsd-kind-icon">Exp<wbr>Level<wbr>Max</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#expleveltogo" class="tsd-kind-icon">Exp<wbr>Level<wbr>Togo</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#jobid" class="tsd-kind-icon">JobID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="classjob.html#level" class="tsd-kind-icon">Level</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="geardetails.html" class="tsd-kind-icon">Gear<wbr>Details</a>
 					</li>
@@ -251,36 +229,9 @@
 					<li class=" tsd-kind-interface">
 						<a href="grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="pagination.html" class="tsd-kind-icon">Pagination</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page" class="tsd-kind-icon">page</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_next" class="tsd-kind-icon">page_<wbr>next</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_prev" class="tsd-kind-icon">page_<wbr>prev</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_total" class="tsd-kind-icon">page_<wbr>total</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results" class="tsd-kind-icon">results</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results_per_page" class="tsd-kind-icon">results_<wbr>per_<wbr>page</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results_total" class="tsd-kind-icon">results_<wbr>total</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="xivapicharacteroptions.html" class="tsd-kind-icon">Xivapi<wbr>Character<wbr>Options</a>
 					</li>

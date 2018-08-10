@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Pagination | @xivapi/angular-client</title>
+	<title>GearSet | @xivapi/angular-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="pagination.html">Pagination</a>
+					<a href="gearset.html">GearSet</a>
 				</li>
 			</ul>
-			<h1>Interface Pagination</h1>
+			<h1>Interface GearSet</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Pagination</span>
+						<span class="target">GearSet</span>
 					</li>
 				</ul>
 			</section>
@@ -81,13 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page" class="tsd-kind-icon">page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_next" class="tsd-kind-icon">page_<wbr>next</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_prev" class="tsd-kind-icon">page_<wbr>prev</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#page_total" class="tsd-kind-icon">page_<wbr>total</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results" class="tsd-kind-icon">results</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results_per_page" class="tsd-kind-icon">results_<wbr>per_<wbr>page</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pagination.html#results_total" class="tsd-kind-icon">results_<wbr>total</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#attributes" class="tsd-kind-icon">Attributes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#classid" class="tsd-kind-icon">ClassID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#gear" class="tsd-kind-icon">Gear</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#gearkey" class="tsd-kind-icon">Gear<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#jobid" class="tsd-kind-icon">JobID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="gearset.html#level" class="tsd-kind-icon">Level</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,109 +95,72 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page" class="tsd-anchor"></a>
-					<h3>page</h3>
-					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="attributes" class="tsd-anchor"></a>
+					<h3>Attributes</h3>
+					<div class="tsd-signature tsd-kind-icon">Attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L5">model/pagination.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L4">model/schema/character/gear-set.ts:4</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Current page number.</p>
-						</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>index: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_next" class="tsd-anchor"></a>
-					<h3>page_<wbr>next</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>next<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="classid" class="tsd-anchor"></a>
+					<h3>ClassID</h3>
+					<div class="tsd-signature tsd-kind-icon">ClassID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L10">model/pagination.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L5">model/schema/character/gear-set.ts:5</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Next page number, equals false if there&#39;s no next page (when you&#39;re on the last one).</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_prev" class="tsd-anchor"></a>
-					<h3>page_<wbr>prev</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>prev<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></div>
+					<a name="gear" class="tsd-anchor"></a>
+					<h3>Gear</h3>
+					<div class="tsd-signature tsd-kind-icon">Gear<span class="tsd-signature-symbol">:</span> <a href="geardetails.html" class="tsd-signature-type">GearDetails</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L15">model/pagination.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L6">model/schema/character/gear-set.ts:6</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Previous page number, equals false if there&#39;s no previous page (when you&#39;re on the first one)</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="page_total" class="tsd-anchor"></a>
-					<h3>page_<wbr>total</h3>
-					<div class="tsd-signature tsd-kind-icon">page_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="gearkey" class="tsd-anchor"></a>
+					<h3>Gear<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">Gear<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L20">model/pagination.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L7">model/schema/character/gear-set.ts:7</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of pages.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results" class="tsd-anchor"></a>
-					<h3>results</h3>
-					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="jobid" class="tsd-anchor"></a>
+					<h3>JobID</h3>
+					<div class="tsd-signature tsd-kind-icon">JobID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L25">model/pagination.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L8">model/schema/character/gear-set.ts:8</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of results in the current page.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results_per_page" class="tsd-anchor"></a>
-					<h3>results_<wbr>per_<wbr>page</h3>
-					<div class="tsd-signature tsd-kind-icon">results_<wbr>per_<wbr>page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="level" class="tsd-anchor"></a>
+					<h3>Level</h3>
+					<div class="tsd-signature tsd-kind-icon">Level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L30">model/pagination.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/schema/character/gear-set.ts#L9">model/schema/character/gear-set.ts:9</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Current maximum amount of results per page.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results_total" class="tsd-anchor"></a>
-					<h3>results_<wbr>total</h3>
-					<div class="tsd-signature tsd-kind-icon">results_<wbr>total<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/238c604/src/model/pagination.ts#L35">model/pagination.ts:35</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Total amount of results.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -245,42 +207,39 @@
 					<li class=" tsd-kind-interface">
 						<a href="gearpiece.html" class="tsd-kind-icon">Gear<wbr>Piece</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="gearset.html" class="tsd-kind-icon">Gear<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="pagination.html" class="tsd-kind-icon">Pagination</a>
+						<a href="gearset.html" class="tsd-kind-icon">Gear<wbr>Set</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page" class="tsd-kind-icon">page</a>
+								<a href="gearset.html#attributes" class="tsd-kind-icon">Attributes</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_next" class="tsd-kind-icon">page_<wbr>next</a>
+								<a href="gearset.html#classid" class="tsd-kind-icon">ClassID</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_prev" class="tsd-kind-icon">page_<wbr>prev</a>
+								<a href="gearset.html#gear" class="tsd-kind-icon">Gear</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#page_total" class="tsd-kind-icon">page_<wbr>total</a>
+								<a href="gearset.html#gearkey" class="tsd-kind-icon">Gear<wbr>Key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results" class="tsd-kind-icon">results</a>
+								<a href="gearset.html#jobid" class="tsd-kind-icon">JobID</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results_per_page" class="tsd-kind-icon">results_<wbr>per_<wbr>page</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="pagination.html#results_total" class="tsd-kind-icon">results_<wbr>total</a>
+								<a href="gearset.html#level" class="tsd-kind-icon">Level</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="pagination.html" class="tsd-kind-icon">Pagination</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="xivapicharacteroptions.html" class="tsd-kind-icon">Xivapi<wbr>Character<wbr>Options</a>
 					</li>
