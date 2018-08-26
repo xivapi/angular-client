@@ -9,6 +9,9 @@ Visit https://xivapi.com/docs for documentation about the web api mapped by this
 
 Further documentation for this library available on documentation website: https://xivapi.github.io/angular-client/
 
+## Installation
+
+Simply run `npm i --save @xivapi/angular-client`
 
 ## Quick start
 
