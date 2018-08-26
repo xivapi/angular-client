@@ -1,10 +1,10 @@
 {
   "name": "@xivapi/angular-client",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "xivapi client library (service and models) for angular applications",
-  "main": "./bundles/ng-serializer.umd.js",
-  "module": "./modules/ng-serializer.es5.js",
-  "es2015": "./modules/ng-serializer.js",
+  "main": "./bundles/xixapi-client.umd.js",
+  "module": "./modules/xixapi-client.es5.js",
+  "es2015": "./modules/xixapi-client.js",
   "scripts": {
     "build": "node build.js",
     "build:clean": "del-cli dist",
