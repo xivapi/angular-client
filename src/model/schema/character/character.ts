@@ -4,7 +4,6 @@ import { GrandCompany } from './grand-company';
 
 export interface Character {
     ActiveClassJob: ClassJob;
-    Added: number;
     Avatar: string;
     Bio: string;
     ClassJobs: { [index: string]: ClassJob };
