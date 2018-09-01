@@ -1,3 +1,5 @@
+export { CharacterSearchResult } from './character-search-result';
+export { CharacterSearchResultRow } from './character-search-result-row';
 export { Pagination } from './pagination';
 export { SearchAlgo } from './search-algo';
 export { SearchIndex } from './search-index';

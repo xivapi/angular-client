@@ -1,10 +1,17 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { XivapiCharacterOptions, XivapiEndpoint, XivapiList, XivapiOptions, XivapiRequestOptions, XivapiSearchOptions } from './model';
+import {
+    CharacterSearchResult,
+    XivapiCharacterOptions,
+    XivapiEndpoint,
+    XivapiList,
+    XivapiOptions,
+    XivapiRequestOptions,
+    XivapiSearchOptions
+} from './model';
 import { XIVAPI_KEY } from './xivapi-client.module';
-import { CharacterResponse } from './model/schema/character/character-response';
-import { CharacterVerification } from './model/schema/character/character-verification';
+import { CharacterResponse, CharacterVerification } from './model/schema/character';
 
 @Injectable()
 export class XivapiService {
@@ -64,6 +71,36 @@ export class XivapiService {
     public getCharacter(lodestoneId: number, options?: XivapiCharacterOptions,
                         details?: 'Friends' | 'Achievements' | 'Gearsets' | 'Record' | 'FreeCompany'): Observable<CharacterResponse> {
         return this.request<any>(`${XivapiService.API_BASE_URL}/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
+    }
+
+    /**
+     * Gets the current list of available servers. Useful for character search queries.
+     */
+    public getServerList(): Observable<string[]> {
+        return this.request<string[]>(`${XivapiService.API_BASE_URL}/servers`);
+    }
+
+    /**
+     * Search for a character on **The Lodestone**. This does not search XIVAPI but instead it goes directly to
+     * lodestone so the response will be "real-time". Responses are cached for 1 hour,
+     * it is important to know that Lodestone has a ~6 hour varnish and CDN cache.
+     *
+     * @param name The name of the character to search, you can use + for spaces or let the API handle it for you.
+     *  If you search very short names you will get lots of responses.
+     *  This is an issue with The Lodestone and not much XIVAPI can do about it at this time.
+     * @param server (optional) The server to search against, this is case sensitive.
+     *  You can obtain a list of valid servers via getServerList method.
+     * @param page Search or move to a specific page.
+     */
+    public searchCharacter(name: string, server?: string, page?: number): Observable<CharacterSearchResult> {
+        let url: string = `${XivapiService.API_BASE_URL}/character/search?name=${name}`;
+        if (server !== undefined) {
+            url += `&world=${server}`;
+        }
+        if (page !== undefined) {
+            url += `&page=${page}`;
+        }
+        return this.request<CharacterSearchResult>(url);
     }
 
     /**
