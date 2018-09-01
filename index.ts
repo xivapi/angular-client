@@ -1,1 +1,3 @@
-export * from './public_api';
+// Public classes.
+export * from './src/model/index';
+export * from './src/index';
