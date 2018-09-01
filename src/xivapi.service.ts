@@ -95,7 +95,7 @@ export class XivapiService {
     public searchCharacter(name: string, server?: string, page?: number): Observable<CharacterSearchResult> {
         let url: string = `${XivapiService.API_BASE_URL}/character/search?name=${name}`;
         if (server !== undefined) {
-            url += `&world=${server}`;
+            url += `&server=${server}`;
         }
         if (page !== undefined) {
             url += `&page=${page}`;
