@@ -81,8 +81,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#payload" class="tsd-kind-icon">Payload</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#state" class="tsd-kind-icon">State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#achievements" class="tsd-kind-icon">Achievements</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#character" class="tsd-kind-icon">Character</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#freecompany" class="tsd-kind-icon">Free<wbr>Company</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#freecompanymembers" class="tsd-kind-icon">Free<wbr>Company<wbr>Members</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#info" class="tsd-kind-icon">Info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="characterresponse.html#pvpteam" class="tsd-kind-icon">PvPTeam</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,56 +95,64 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="payload" class="tsd-anchor"></a>
-					<h3>Payload</h3>
-					<div class="tsd-signature tsd-kind-icon">Payload<span class="tsd-signature-symbol">:</span> <a href="character.html" class="tsd-signature-type">Character</a></div>
+					<a name="achievements" class="tsd-anchor"></a>
+					<h3>Achievements</h3>
+					<div class="tsd-signature tsd-kind-icon">Achievements<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/c76c886/src/model/schema/character/character-response.ts#L4">model/schema/character/character-response.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L5">model/schema/character/character-response.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="state" class="tsd-anchor"></a>
-					<h3>State</h3>
-					<div class="tsd-signature tsd-kind-icon">State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">3</span></div>
+					<a name="character" class="tsd-anchor"></a>
+					<h3>Character</h3>
+					<div class="tsd-signature tsd-kind-icon">Character<span class="tsd-signature-symbol">:</span> <a href="character.html" class="tsd-signature-type">Character</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/c76c886/src/model/schema/character/character-response.ts#L23">model/schema/character/character-response.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L7">model/schema/character/character-response.ts:7</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<table>
-								<thead>
-									<tr>
-										<th>State</th>
-										<th>Number</th>
-										<th>Details</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>STATE_ADDING</td>
-										<td>1</td>
-										<td>This state is returned when the character does not exist on the API</td>
-									</tr>
-								</tbody>
-							</table>
-							<p>and needs adding (the first ever request and sub-sequent requests until the character is added).
-								The Payload should be empty if this state is provided.
-								You are advised to inform your audience that a character add request has been performed.
-							It should take 2 minutes or less to add your character.</p>
-						</div>
-						<p>STATE_CACHED |    2    | This state is returned when the character exists in the system and you&#39;re being provided a cached response.
-							The Payload will contain the character information which will include useful information such as LastUpdated
-							which you can use to base on if a character update request is required
-							STATE_NOT_FOUND |    3    | This state is returned when a character does not exist on The Lodestone.
-							If a character is attempted to be added but the system does not find it then it will be registered as not found.
-							The Payload will return empty. Characters in this state are checked every 24 hours,
-							if the character continues to not be found after several tries then this entry will be deleted.
-						You can also request a deletion of this entry via the /Delete endpoint.</p>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="freecompany" class="tsd-anchor"></a>
+					<h3>Free<wbr>Company</h3>
+					<div class="tsd-signature tsd-kind-icon">Free<wbr>Company<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L10">model/schema/character/character-response.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="freecompanymembers" class="tsd-anchor"></a>
+					<h3>Free<wbr>Company<wbr>Members</h3>
+					<div class="tsd-signature tsd-kind-icon">Free<wbr>Company<wbr>Members<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L13">model/schema/character/character-response.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="info" class="tsd-anchor"></a>
+					<h3>Info</h3>
+					<div class="tsd-signature tsd-kind-icon">Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L16">model/schema/character/character-response.ts:16</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="pvpteam" class="tsd-anchor"></a>
+					<h3>PvPTeam</h3>
+					<div class="tsd-signature tsd-kind-icon">PvPTeam<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/ff374b3/src/model/schema/character/character-response.ts#L19">model/schema/character/character-response.ts:19</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -178,10 +190,22 @@
 						<a href="characterresponse.html" class="tsd-kind-icon">Character<wbr>Response</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="characterresponse.html#payload" class="tsd-kind-icon">Payload</a>
+								<a href="characterresponse.html#achievements" class="tsd-kind-icon">Achievements</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="characterresponse.html#state" class="tsd-kind-icon">State</a>
+								<a href="characterresponse.html#character" class="tsd-kind-icon">Character</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="characterresponse.html#freecompany" class="tsd-kind-icon">Free<wbr>Company</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="characterresponse.html#freecompanymembers" class="tsd-kind-icon">Free<wbr>Company<wbr>Members</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="characterresponse.html#info" class="tsd-kind-icon">Info</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="characterresponse.html#pvpteam" class="tsd-kind-icon">PvPTeam</a>
 							</li>
 						</ul>
 					</li>
