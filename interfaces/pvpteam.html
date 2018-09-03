@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>XivapiOptions | @xivapi/angular-client</title>
+	<title>PvpTeam | @xivapi/angular-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="xivapioptions.html">XivapiOptions</a>
+					<a href="pvpteam.html">PvpTeam</a>
 				</li>
 			</ul>
-			<h1>Interface XivapiOptions</h1>
+			<h1>Interface PvpTeam</h1>
 		</div>
 	</div>
 </header>
@@ -70,18 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">XivapiOptions</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="xivapicharacteroptions.html" class="tsd-signature-type">XivapiCharacterOptions</a>
-							</li>
-							<li>
-								<a href="xivapirequestoptions.html" class="tsd-signature-type">XivapiRequestOptions</a>
-							</li>
-							<li>
-								<a href="xivapisearchoptions.html" class="tsd-signature-type">XivapiSearchOptions</a>
-							</li>
-						</ul>
+						<span class="target">PvpTeam</span>
 					</li>
 				</ul>
 			</section>
@@ -92,7 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapioptions.html#language" class="tsd-kind-icon">language</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pvpteam.html#crest" class="tsd-kind-icon">Crest</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pvpteam.html#id" class="tsd-kind-icon">ID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pvpteam.html#members" class="tsd-kind-icon">Members</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pvpteam.html#name" class="tsd-kind-icon">Name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="pvpteam.html#server" class="tsd-kind-icon">Server</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,23 +94,54 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="language" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> language</h3>
-					<div class="tsd-signature tsd-kind-icon">language<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="crest" class="tsd-anchor"></a>
+					<h3>Crest</h3>
+					<div class="tsd-signature tsd-kind-icon">Crest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/xivapi-options.ts#L10">model/xivapi-options.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/schema/pvp-team/pvp-team.ts#L4">model/schema/pvp-team/pvp-team.ts:4</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>To help templating; you may want to use the simplified field Name,
-								so you can provide the query language=fr and now Name will be the French name.
-							This is also extended to other string fields such as Descriptions.</p>
-						</div>
-						<p>Search will use the language parameter to decide which field to query the string against,
-						for example: language=fr&amp;string=LeAwsome will search for LeAwesome on the field Name_fr.</p>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="id" class="tsd-anchor"></a>
+					<h3>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/schema/pvp-team/pvp-team.ts#L5">model/schema/pvp-team/pvp-team.ts:5</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="members" class="tsd-anchor"></a>
+					<h3>Members</h3>
+					<div class="tsd-signature tsd-kind-icon">Members<span class="tsd-signature-symbol">:</span> <a href="pvpteammember.html" class="tsd-signature-type">PvpTeamMember</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/schema/pvp-team/pvp-team.ts#L6">model/schema/pvp-team/pvp-team.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>Name</h3>
+					<div class="tsd-signature tsd-kind-icon">Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/schema/pvp-team/pvp-team.ts#L7">model/schema/pvp-team/pvp-team.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="server" class="tsd-anchor"></a>
+					<h3>Server</h3>
+					<div class="tsd-signature tsd-kind-icon">Server<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/d116cd1/src/model/schema/pvp-team/pvp-team.ts#L8">model/schema/pvp-team/pvp-team.ts:8</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -179,9 +203,30 @@
 					<li class=" tsd-kind-interface">
 						<a href="pagination.html" class="tsd-kind-icon">Pagination</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="pvpteam.html" class="tsd-kind-icon">Pvp<wbr>Team</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pvpteam.html#crest" class="tsd-kind-icon">Crest</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pvpteam.html#id" class="tsd-kind-icon">ID</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pvpteam.html#members" class="tsd-kind-icon">Members</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pvpteam.html#name" class="tsd-kind-icon">Name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="pvpteam.html#server" class="tsd-kind-icon">Server</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="pvpteammember.html" class="tsd-kind-icon">Pvp<wbr>Team<wbr>Member</a>
 					</li>
@@ -191,18 +236,9 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="xivapilist.html" class="tsd-kind-icon">Xivapi<wbr>List</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="xivapioptions.html" class="tsd-kind-icon">Xivapi<wbr>Options</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="xivapioptions.html#language" class="tsd-kind-icon">language</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="xivapirequestoptions.html" class="tsd-kind-icon">Xivapi<wbr>Request<wbr>Options</a>
 					</li>
