@@ -1,12 +1,8 @@
 import { CharacterSearchResultRow } from './character-search-result-row';
+import { Pagination } from './pagination';
 
 export interface CharacterSearchResult {
-    Characters: CharacterSearchResultRow[];
+    Results: CharacterSearchResultRow[];
 
-    // TODO change this for normalized pagination
-    PageCurrent: number;
-    PageNext: number;
-    PagePrevious: number;
-    PageTotal: number;
-    Total: number;
+    Pagination: Pagination;
 }

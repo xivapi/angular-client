@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
     CharacterSearchResult,
+    PvpTeam,
     XivapiCharacterOptions,
     XivapiEndpoint,
     XivapiList,
@@ -31,8 +32,8 @@ export class XivapiService {
      * @param id The id of the resource for the request.
      * @param options The options of the request, optional.
      */
-    public get(endpoint: XivapiEndpoint, id: number, options?: XivapiRequestOptions): Observable<any> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/${endpoint}/${id}`, options);
+    public get<T = any>(endpoint: XivapiEndpoint, id: number, options?: XivapiRequestOptions): Observable<T> {
+        return this.request<T>(`${XivapiService.API_BASE_URL}/${endpoint}/${id}`, options);
     }
 
     /**
@@ -41,8 +42,8 @@ export class XivapiService {
      * @param endpoint The endpoint to use for the request.
      * @param options The options of the request, optional.
      */
-    public getList(endpoint: XivapiEndpoint, options?: XivapiRequestOptions): Observable<XivapiList<any>> {
-        return this.request<XivapiList<any>>(`${XivapiService.API_BASE_URL}/${endpoint}`, options);
+    public getList<T = any>(endpoint: XivapiEndpoint, options?: XivapiRequestOptions): Observable<XivapiList<T>> {
+        return this.request<XivapiList<T>>(`${XivapiService.API_BASE_URL}/${endpoint}`, options);
     }
 
     /**
@@ -136,6 +137,15 @@ export class XivapiService {
     public getLinkshell(lodestoneId: number, options?: XivapiOptions,
                         details?: 'record'): Observable<any> {
         return this.request<any>(`${XivapiService.API_BASE_URL}/Linkshell/${lodestoneId}${details ? '/' + details : ''}`, options);
+    }
+
+    /**
+     * Gets a PvP team based on its lodestone id (string)
+     *
+     * @param id the id of the team to get.
+     */
+    public getPvPTeam(id: string): Observable<PvpTeam> {
+        return this.request<PvpTeam>(`${XivapiService.API_BASE_URL}/PvPTeam/${id}`);
     }
 
     /**

@@ -1,4 +1,5 @@
 import { Character } from './character';
+import { PvpTeam } from '../pvp-team';
 
 export interface CharacterResponse {
     // TODO
@@ -15,6 +16,5 @@ export interface CharacterResponse {
     // TODO
     Info: any;
 
-    // TODO
-    PvPTeam: any;
+    PvPTeam: PvpTeam;
 }
