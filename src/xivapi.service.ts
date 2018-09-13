@@ -59,7 +59,7 @@ export class XivapiService {
             }, '').slice(0, -1);
             queryParams.append('filters', filterChain);
         }
-        return this.request<any>(`${XivapiService.API_BASE_URL}/Search`, options);
+        return this.request<any>(`${XivapiService.API_BASE_URL}/Search`, options, queryParams);
     }
 
     /**
