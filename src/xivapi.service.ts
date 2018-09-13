@@ -156,14 +156,12 @@ export class XivapiService {
         return this.request<any>(`${XivapiService.API_BASE_URL}/PatchList`, options);
     }
 
-    protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
-        const queryParams: HttpParams = this.prepareQueryString(params);
+    protected request<T>(endpoint: string, params?: XivapiOptions, baseQueryString : HttpParams = new HttpParams()): Observable<T> {
+        const queryParams: HttpParams = this.prepareQueryString(params, baseQueryString);
         return this.http.get<any>(endpoint, {params: queryParams});
-
     }
 
-    private prepareQueryString(options?: XivapiOptions): HttpParams {
-        const queryString: HttpParams = new HttpParams();
+    private prepareQueryString(options?: XivapiOptions, queryString: HttpParams = new HttpParams()): HttpParams {
         if (options === null || options === undefined) {
             return queryString;
         }
