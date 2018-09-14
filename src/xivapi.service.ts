@@ -20,7 +20,7 @@ export class XivapiService {
     /**
      * Base url of xivapi.
      */
-    protected static readonly API_BASE_URL: string = 'https://xivapi.com';
+    public static readonly API_BASE_URL: string = 'https://xivapi.com';
 
     constructor(@Inject(XIVAPI_KEY) protected readonly apiKey: string, private http: HttpClient) {
     }
@@ -52,14 +52,17 @@ export class XivapiService {
      * @param options Search options, see http://xivapi.com/docs/Search for more details.
      */
     public search(options: XivapiSearchOptions): Observable<any> {
-        const queryParams: HttpParams = this.prepareQueryString(options);
+        let queryParams: HttpParams = this.prepareQueryString(options);
         if (options.filters) {
             const filterChain: string = options.filters.reduce((chain, filter) => {
                 return `${chain}${filter.column}${filter.operator}${filter.value}&`;
             }, '').slice(0, -1);
-            queryParams.append('filters', filterChain);
+            queryParams = queryParams.set('filters', filterChain);
         }
-        return this.request<any>(`${XivapiService.API_BASE_URL}/Search`, options, queryParams);
+        if (this.apiKey !== undefined) {
+            queryParams = queryParams.set('key', this.apiKey);
+        }
+        return this.http.get<any>(`${XivapiService.API_BASE_URL}/Search`, {params: queryParams});
     }
 
     /**
@@ -156,12 +159,16 @@ export class XivapiService {
         return this.request<any>(`${XivapiService.API_BASE_URL}/PatchList`, options);
     }
 
-    protected request<T>(endpoint: string, params?: XivapiOptions, baseQueryString : HttpParams = new HttpParams()): Observable<T> {
-        const queryParams: HttpParams = this.prepareQueryString(params, baseQueryString);
+    protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
+        const queryParams: HttpParams = this.prepareQueryString(params);
         return this.http.get<any>(endpoint, {params: queryParams});
     }
 
-    private prepareQueryString(options?: XivapiOptions, queryString: HttpParams = new HttpParams()): HttpParams {
+    private prepareQueryString(options?: XivapiOptions): HttpParams {
+        let queryString: HttpParams = new HttpParams();
+        if (this.apiKey !== undefined) {
+            queryString = queryString.set('key', this.apiKey);
+        }
         if (options === null || options === undefined) {
             return queryString;
         }
@@ -169,14 +176,11 @@ export class XivapiService {
             // @ts-ignore
             const value: any = options[optionKey] as any;
             if (value instanceof Array) {
-                queryString.append(optionKey, value.join(','));
+                queryString = queryString.set(optionKey, value.join(','));
             } else {
-                queryString.append(optionKey, value.toString());
+                queryString = queryString.set(optionKey, value.toString());
             }
         });
-        if (this.apiKey !== undefined) {
-            queryString.append('key', this.apiKey);
-        }
         return queryString;
     }
 }
