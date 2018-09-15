@@ -28,25 +28,6 @@ export interface XivapiRequestOptions extends XivapiOptions {
     ids?: number[];
 
     /**
-     * Pull specific columns from the data. By default the list just provides the ID.
-     * You can request specific pieces of information from a list by plugging in the column names.
-     * For extended content you use dot notation to access it, for example:
-     *
-     * To access the data in Items these you would request the columns:
-     *
-     * columns=Items.0.Name,Items.1.Name
-     * If you imagine an array having 50 items, this could be tedious and will eat into your maximum column count.
-     * You can therefore use a count format, eg:
-     *
-     * columns=Items.*50.Name
-     * This will return 50 rows from the column Items using the index Name
-     *
-     * There are restrictions on the number of columns you can query, the column character length and the maximum items.
-     * By default these are pretty strict so it is recommended to create a Developer App to be provided a key to increase your limits.
-     */
-    columns?: string[];
-
-    /**
      * View the current column and schema information of the content. This will provide 2 objects: columns and schema.
      *
      * columns - This is list of all columns in dot notation. For example an achievement would have: AchievementCategory.AchievementKind.ID
