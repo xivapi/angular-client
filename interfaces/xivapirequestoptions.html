@@ -93,13 +93,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#columns" class="tsd-kind-icon">columns</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapirequestoptions.html#columns" class="tsd-kind-icon">columns</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#ids" class="tsd-kind-icon">ids</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapirequestoptions.html#language" class="tsd-kind-icon">language</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#max_items" class="tsd-kind-icon">max_<wbr>items</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#minified" class="tsd-kind-icon">minified</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#page" class="tsd-kind-icon">page</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapirequestoptions.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapirequestoptions.html#tags" class="tsd-kind-icon">tags</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,22 +108,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="columns" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> columns</h3>
 					<div class="tsd-signature tsd-kind-icon">columns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#columns">columns</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L47">model/xivapi-request-options.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-options.ts#L29">model/xivapi-options.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Pull specific columns from the data. By default the list just provides the ID.
-								You can request specific pieces of information from a list by plugging in the column names.
+							<p>Pull specific columns from the data. By default the list just provides the ID, and result provides every column.
+								You can request specific pieces of information from a list or result by plugging in the column names.
 							For extended content you use dot notation to access it, for example:</p>
 						</div>
-						<p>To access the data in Items these you would request the columns:</p>
+						<p>To access the data in Items or a search on the Items index, you could request with these columns:</p>
 						<p>columns=Items.0.Name,Items.1.Name
 							If you imagine an array having 50 items, this could be tedious and will eat into your maximum column count.
 						You can therefore use a count format, eg:</p>
@@ -138,7 +140,7 @@
 					<div class="tsd-signature tsd-kind-icon">ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L28">model/xivapi-request-options.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-request-options.ts#L28">model/xivapi-request-options.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -154,7 +156,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#language">language</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-options.ts#L10">model/xivapi-options.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-options.ts#L10">model/xivapi-options.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -173,7 +175,7 @@
 					<div class="tsd-signature tsd-kind-icon">max_<wbr>items<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L23">model/xivapi-request-options.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-request-options.ts#L23">model/xivapi-request-options.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">minified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L17">model/xivapi-request-options.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-request-options.ts#L17">model/xivapi-request-options.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -206,7 +208,7 @@
 					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L10">model/xivapi-request-options.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-request-options.ts#L10">model/xivapi-request-options.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -221,7 +223,7 @@
 					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/b39e8c8/src/model/xivapi-request-options.ts#L55">model/xivapi-request-options.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-request-options.ts#L36">model/xivapi-request-options.ts:36</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -230,6 +232,26 @@
 						</div>
 						<p>columns - This is list of all columns in dot notation. For example an achievement would have: AchievementCategory.AchievementKind.ID
 						schema - This is a nested representation of the schema.</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="tags" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tags</h3>
+					<div class="tsd-signature tsd-kind-icon">tags<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#tags">tags</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/a902fda/src/model/xivapi-options.ts#L39">model/xivapi-options.ts:39</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>You can add tracking counters to your app for whatever purpose using &quot;tags&quot;. Tags will appear in your dashboard with a counter
+								next to them. You can have as many tags you would like and counts will store for a period of 30 days before taping off
+							and being removed if they become inactive.</p>
+						</div>
+						<p>A tag must be alpha numeric and allows dashes and underscores, however this is not checked or validated until it hits XivAPI.
+						A GitHub issue to add support for this to TypeScript can be found at <a href="https://github.com/Microsoft/TypeScript/issues/6579">https://github.com/Microsoft/TypeScript/issues/6579</a></p>
 					</div>
 				</section>
 			</section>
@@ -312,7 +334,7 @@
 					<li class="current tsd-kind-interface">
 						<a href="xivapirequestoptions.html" class="tsd-kind-icon">Xivapi<wbr>Request<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="xivapirequestoptions.html#columns" class="tsd-kind-icon">columns</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -332,6 +354,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="xivapirequestoptions.html#schema" class="tsd-kind-icon">schema</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="xivapirequestoptions.html#tags" class="tsd-kind-icon">tags</a>
 							</li>
 						</ul>
 					</li>
