@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.5"></a>
+## [0.6.5](https://github.com/xivapi/angular-client/compare/v0.6.4...v0.6.5) (2018-09-15)
+
+
+### Bug Fixes
+
+* fix missing search options ([a902fda](https://github.com/xivapi/angular-client/commit/a902fda)), closes [#3](https://github.com/xivapi/angular-client/issues/3)
+
+
+
 <a name="0.6.4"></a>
 ## [0.6.4](https://github.com/xivapi/angular-client/compare/v0.6.3...v0.6.4) (2018-09-14)
 
