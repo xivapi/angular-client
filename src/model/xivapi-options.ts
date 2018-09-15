@@ -10,11 +10,11 @@ export interface XivapiOptions {
     language?: string;
 
      /**
-     * Pull specific columns from the data. By default the result provides every column.
-     * You can request specific pieces of information from a result by plugging in the column names.
+     * Pull specific columns from the data. By default the list just provides the ID, and result provides every column.
+     * You can request specific pieces of information from a list or result by plugging in the column names.
      * For extended content you use dot notation to access it, for example:
      *
-     * To access the data in a search on the Items index, these you could request the columns:
+     * To access the data in Items or a search on the Items index, you could request with these columns:
      *
      * columns=Items.0.Name,Items.1.Name
      * If you imagine an array having 50 items, this could be tedious and will eat into your maximum column count.
@@ -33,7 +33,8 @@ export interface XivapiOptions {
     * next to them. You can have as many tags you would like and counts will store for a period of 30 days before taping off
     * and being removed if they become inactive.
     *
-    * A tag must be alpha numeric and allows dashes and underscores.
+    * A tag must be alpha numeric and allows dashes and underscores, however this is not checked or validated until it hits XivAPI.
+    * A GitHub issue to add support for this to TypeScript can be found at https://github.com/Microsoft/TypeScript/issues/6579
     */
     tags?: string[];
 }
