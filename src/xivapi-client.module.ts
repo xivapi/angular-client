@@ -1,12 +1,8 @@
-import { InjectionToken, ModuleWithProviders, NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { XivapiService } from './xivapi.service';
-import { HttpClientModule } from '@angular/common/http';
-
-/**
- * @hidden
- */
-export const XIVAPI_KEY: InjectionToken<string> = new InjectionToken('XIVAPI_KEY');
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { XivapiServiceFactory } from './xivapi-service-factory';
 
 @NgModule({
     imports: [
@@ -21,8 +17,11 @@ export class XivapiClientModule {
         return {
             ngModule: XivapiClientModule,
             providers: [
-                XivapiService,
-                {provide: XIVAPI_KEY, useValue: key}
+                {
+                    provide: XivapiService,
+                    useFactory: XivapiServiceFactory,
+                    deps: [key, HttpClient]
+                }
             ]
         };
     }

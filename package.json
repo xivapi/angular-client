@@ -18,7 +18,7 @@
     "docs:generate": "npm run docs:clean && typedoc --out docs --excludePrivate --mode file --exclude \"**/*+(index|spec|entry).ts\" ./src",
     "docs:clean": "del-cli docs/"
   },
-  "typings": "./angular-client.d.ts",
+  "typings": "./xivapi-client.d.ts",
   "author": "Supamiu",
   "repository": {
     "type": "git",

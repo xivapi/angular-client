@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { SearchIndex, XivapiService } from '../src';
+import { SearchIndex, XivapiService } from '../src/xivapi-client';
 import { HttpClientTestingModule, HttpTestingController, TestRequest } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 

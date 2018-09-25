@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
@@ -11,7 +11,6 @@ import {
     XivapiRequestOptions,
     XivapiSearchOptions
 } from './model';
-import { XIVAPI_KEY } from './xivapi-client.module';
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
 
 @Injectable()
@@ -22,7 +21,7 @@ export class XivapiService {
      */
     public static readonly API_BASE_URL: string = 'https://xivapi.com';
 
-    constructor(@Inject(XIVAPI_KEY) protected readonly apiKey: string, private http: HttpClient) {
+    constructor(@Inject('XIVAPI_KEY') protected readonly apiKey: string, private http: HttpClient) {
     }
 
     /**
