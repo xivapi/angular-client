@@ -21,6 +21,7 @@ export class XivapiService {
      * Base url of xivapi.
      */
     public static readonly API_BASE_URL: string = 'https://xivapi.com';
+    public static readonly STAGING_API_BASE_URL: string = 'https://staging.xivapi.com';
 
     constructor(@Inject(XIVAPI_KEY) protected readonly apiKey: string, private http: HttpClient) {
     }
@@ -33,7 +34,7 @@ export class XivapiService {
      * @param options The options of the request, optional.
      */
     public get<T = any>(endpoint: XivapiEndpoint, id: number, options?: XivapiRequestOptions): Observable<T> {
-        return this.request<T>(`${XivapiService.API_BASE_URL}/${endpoint}/${id}`, options);
+        return this.request<T>(`/${endpoint}/${id}`, options);
     }
 
     /**
@@ -43,7 +44,7 @@ export class XivapiService {
      * @param options The options of the request, optional.
      */
     public getList<T = any>(endpoint: XivapiEndpoint, options?: XivapiRequestOptions): Observable<XivapiList<T>> {
-        return this.request<XivapiList<T>>(`${XivapiService.API_BASE_URL}/${endpoint}`, options);
+        return this.request<XivapiList<T>>(`/${endpoint}`, options);
     }
 
     /**
@@ -62,7 +63,7 @@ export class XivapiService {
         if (this.apiKey !== undefined) {
             queryParams = queryParams.set('key', this.apiKey);
         }
-        return this.http.get<any>(`${XivapiService.API_BASE_URL}/Search`, {params: queryParams});
+        return this.http.get<any>(`/Search`, {params: queryParams});
     }
 
     /**
@@ -74,14 +75,14 @@ export class XivapiService {
      */
     public getCharacter(lodestoneId: number, options?: XivapiCharacterOptions,
                         details?: 'Friends' | 'Achievements' | 'Gearsets' | 'Record' | 'FreeCompany'): Observable<CharacterResponse> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
+        return this.request<any>(`/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
 
     /**
      * Gets the current list of available servers. Useful for character search queries.
      */
     public getServerList(): Observable<string[]> {
-        return this.request<string[]>(`${XivapiService.API_BASE_URL}/servers`);
+        return this.request<string[]>(`/servers`);
     }
 
     /**
@@ -97,7 +98,7 @@ export class XivapiService {
      * @param page Search or move to a specific page.
      */
     public searchCharacter(name: string, server?: string, page?: number): Observable<CharacterSearchResult> {
-        let url: string = `${XivapiService.API_BASE_URL}/character/search?name=${name}`;
+        let url: string = `/character/search?name=${name}`;
         if (server !== undefined) {
             url += `&server=${server}`;
         }
@@ -114,7 +115,7 @@ export class XivapiService {
      * @param options Options of the request.
      */
     public verifyCharacter(lodestoneId: number, options?: XivapiCharacterOptions): Observable<CharacterVerification> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/Character/${lodestoneId}/Verification`, options);
+        return this.request<any>(`/Character/${lodestoneId}/Verification`, options);
     }
 
 
@@ -127,7 +128,7 @@ export class XivapiService {
      */
     public getFreeCompany(lodestoneId: number, options?: XivapiOptions,
                           details?: 'members' | 'record'): Observable<any> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/FreeCompany/${lodestoneId}${details ? '/' + details : ''}`, options);
+        return this.request<any>(`/FreeCompany/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
 
     /**
@@ -139,29 +140,36 @@ export class XivapiService {
      */
     public getLinkshell(lodestoneId: number, options?: XivapiOptions,
                         details?: 'record'): Observable<any> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/Linkshell/${lodestoneId}${details ? '/' + details : ''}`, options);
+        return this.request<any>(`/Linkshell/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
 
     /**
      * Gets a PvP team based on its lodestone id (string)
      *
      * @param id the id of the team to get.
+     * @param options Options of the request
      */
-    public getPvPTeam(id: string): Observable<PvpTeam> {
-        return this.request<PvpTeam>(`${XivapiService.API_BASE_URL}/PvPTeam/${id}`);
+    public getPvPTeam(id: string, options?: XivapiOptions): Observable<PvpTeam> {
+        return this.request<PvpTeam>(`/PvPTeam/${id}`, options);
     }
 
     /**
      * Gets the list of patches using the /PatchList endpoint.
      * @param options Options of the request.
      */
-    public getPatchList(options: XivapiOptions): Observable<any> {
-        return this.request<any>(`${XivapiService.API_BASE_URL}/PatchList`, options);
+    public getPatchList(options?: XivapiOptions): Observable<any> {
+        return this.request<any>(`/PatchList`, options);
     }
 
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         const queryParams: HttpParams = this.prepareQueryString(params);
-        return this.http.get<any>(endpoint, {params: queryParams});
+        let baseUrl: string;
+        if (params !== undefined) {
+            baseUrl = params.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
+        } else {
+            baseUrl = XivapiService.API_BASE_URL;
+        }
+        return this.http.get<any>(`${baseUrl}${endpoint}`, {params: queryParams});
     }
 
     private prepareQueryString(options?: XivapiOptions): HttpParams {

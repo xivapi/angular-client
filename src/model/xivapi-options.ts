@@ -37,4 +37,9 @@ export interface XivapiOptions {
     * A GitHub issue to add support for this to TypeScript can be found at https://github.com/Microsoft/TypeScript/issues/6579
     */
     tags?: string[];
+
+    /**
+     * Should this request be fired against staging environment? NOT SUITED FOR PRODUCTION !!!
+     */
+    staging?: boolean;
 }
