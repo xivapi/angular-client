@@ -1,6 +1,6 @@
 {
   "name": "@xivapi/angular-client",
-  "version": "0.6.7",
+  "version": "0.7.0",
   "description": "xivapi client library (service and models) for angular applications",
   "main": "./bundles/xivapi-client.umd.js",
   "module": "./modules/xivapi-client.es5.js",

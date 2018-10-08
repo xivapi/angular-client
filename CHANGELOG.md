@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/xivapi/angular-client/compare/v0.6.7...v0.7.0) (2018-10-08)
+
+
+### Features
+
+* added support for staging requests via request options ([d8a7184](https://github.com/xivapi/angular-client/commit/d8a7184))
+
+
+
 <a name="0.6.7"></a>
 ## [0.6.7](https://github.com/xivapi/angular-client/compare/v0.6.6...v0.6.7) (2018-09-25)
 
