@@ -63,7 +63,8 @@ export class XivapiService {
         if (this.apiKey !== undefined) {
             queryParams = queryParams.set('key', this.apiKey);
         }
-        return this.http.get<any>(`/Search`, {params: queryParams});
+        const baseUrl: string = options.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
+        return this.http.get<any>(`${baseUrl}/Search`, {params: queryParams});
     }
 
     /**
