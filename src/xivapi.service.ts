@@ -74,7 +74,7 @@ export class XivapiService {
      * @param options Options of the request.
      * @param details Specific details you want to get.
      */
-    public getCharacter(lodestoneId: number, options?: XivapiCharacterOptions,
+    public getCharacter(lodestoneId: number | string, options?: XivapiCharacterOptions,
                         details?: 'Friends' | 'Achievements' | 'Gearsets' | 'Record' | 'FreeCompany'): Observable<CharacterResponse> {
         return this.request<any>(`/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
@@ -127,7 +127,7 @@ export class XivapiService {
      * @param options Options of the request.
      * @param details Specific details you want to get.
      */
-    public getFreeCompany(lodestoneId: number, options?: XivapiOptions,
+    public getFreeCompany(lodestoneId: number | string, options?: XivapiOptions,
                           details?: 'members' | 'record'): Observable<any> {
         return this.request<any>(`/FreeCompany/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
@@ -139,7 +139,7 @@ export class XivapiService {
      * @param options Options of the request.
      * @param details Specific details you want to get.
      */
-    public getLinkshell(lodestoneId: number, options?: XivapiOptions,
+    public getLinkshell(lodestoneId: number | string, options?: XivapiOptions,
                         details?: 'record'): Observable<any> {
         return this.request<any>(`/Linkshell/${lodestoneId}${details ? '/' + details : ''}`, options);
     }
