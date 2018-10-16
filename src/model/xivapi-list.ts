@@ -7,10 +7,10 @@ export interface XivapiList<T> {
     /**
      * List of the results you're getting.
      */
-    results: T[];
+    Results: T[];
 
     /**
      * Pagination informations.
      */
-    pagination: Pagination;
+    Pagination: Pagination;
 }
