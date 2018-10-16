@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.3"></a>
+## [0.7.3](https://github.com/xivapi/angular-client/compare/v0.7.2...v0.7.3) (2018-10-16)
+
+
+### Bug Fixes
+
+* support for string type in lodestoneIds for long ids (Free company mainly) ([88a1c4e](https://github.com/xivapi/angular-client/commit/88a1c4e))
+
+
+
 <a name="0.7.2"></a>
 ## [0.7.2](https://github.com/xivapi/angular-client/compare/v0.7.1...v0.7.2) (2018-10-16)
 
