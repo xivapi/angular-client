@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {
     CharacterSearchResult,
+    Pagination,
     PvpTeam,
     XivapiCharacterOptions,
     XivapiEndpoint,
@@ -107,6 +108,30 @@ export class XivapiService {
             url += `&page=${page}`;
         }
         return this.request<CharacterSearchResult>(url);
+    }
+
+    /**
+     * Search for free companies on The Lodestone. This parses the lodestone in real time so it will be slow for non-cached responses.
+     * All search queries are cached for 1 hour, it is important to know that Lodestone has a ~6 hour varnish and CDN cache.
+     * This does not search XIVAPI so free companies found may not be on
+     * the service and will be added when requested by their specified lodestone ID.
+     *
+     * @param name The name of the company to search, you can use + for spaces or let the API handle it for you.
+     *  If you search very short names you will get lots of responses.
+     *  This is an issue with The Lodestone and not much XIVAPI can do about it at this time.
+     * @param server (optional) The server to search against, this is case sensitive.
+     *  You can obtain a list of valid servers via getServerList method.
+     * @param page Search or move to a specific page.
+     */
+    public searchFreeCompany(name: string, server?: string, page?: number): Observable<{ Results: any[], Pagination: Pagination }> {
+        let url: string = `/freecompany/search?name=${name}`;
+        if (server !== undefined) {
+            url += `&server=${server}`;
+        }
+        if (page !== undefined) {
+            url += `&page=${page}`;
+        }
+        return this.request<{ Results: any[], Pagination: Pagination }>(url);
     }
 
     /**
