@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/xivapi/angular-client/compare/v0.7.3...v0.8.0) (2018-10-17)
+
+
+### Bug Fixes
+
+* fixed an issue adding staging to query params when querying the staging env ([155ad98](https://github.com/xivapi/angular-client/commit/155ad98))
+
+
+### Features
+
+* implemented free company search ([77fcd1b](https://github.com/xivapi/angular-client/commit/77fcd1b))
+
+
+
 <a name="0.7.3"></a>
 ## [0.7.3](https://github.com/xivapi/angular-client/compare/v0.7.2...v0.7.3) (2018-10-16)
 
