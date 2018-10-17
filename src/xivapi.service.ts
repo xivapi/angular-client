@@ -65,6 +65,9 @@ export class XivapiService {
             queryParams = queryParams.set('key', this.apiKey);
         }
         const baseUrl: string = options.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
+        if (options.staging) {
+            queryParams = queryParams.delete('staging');
+        }
         return this.http.get<any>(`${baseUrl}/Search`, {params: queryParams});
     }
 
@@ -188,10 +191,13 @@ export class XivapiService {
     }
 
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
-        const queryParams: HttpParams = this.prepareQueryString(params);
+        let queryParams: HttpParams = this.prepareQueryString(params);
         let baseUrl: string;
         if (params !== undefined) {
             baseUrl = params.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
+            if (params.staging) {
+                queryParams = queryParams.delete('staging');
+            }
         } else {
             baseUrl = XivapiService.API_BASE_URL;
         }
