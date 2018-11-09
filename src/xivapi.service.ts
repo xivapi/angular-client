@@ -14,6 +14,8 @@ import {
 } from './model';
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
 import { XIVAPI_KEY } from './xivapi-client.module';
+import { MarketboardItem } from './model/schema/market/marketboard-item';
+import { MarketboardItemHistory } from './model/schema/market/marketboard-item-history';
 
 @Injectable()
 export class XivapiService {
@@ -188,6 +190,28 @@ export class XivapiService {
      */
     public getPatchList(options?: XivapiOptions): Observable<any> {
         return this.request<any>(`/PatchList`, options);
+    }
+
+    /**
+     * Gets marketboard informations for a given item.
+     *
+     * @param server The server to use for marketboard informations.
+     * @param itemId The item you want informations on.
+     * @param options Options of the request.
+     */
+    public getMarketBoardItem(server: string, itemId: number, options?: XivapiOptions): Observable<MarketboardItem> {
+        return this.request<MarketboardItem>(`/market/${server}/items/${itemId}`, options);
+    }
+
+    /**
+     * Gets marketboard history for a given item.
+     *
+     * @param server The server to use for marketboard informations.
+     * @param itemId The item you want informations on.
+     * @param options Options of the request.
+     */
+    public getMarketBoardItemHistory(server: string, itemId: number, options?: XivapiOptions): Observable<MarketboardItemHistory> {
+        return this.request<MarketboardItemHistory>(`/market/${server}/items/${itemId}/history`, options);
     }
 
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
