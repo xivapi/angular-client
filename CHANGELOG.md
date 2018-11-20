@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/xivapi/angular-client/compare/v0.10.0...v0.10.1) (2018-11-20)
+
+
+### Bug Fixes
+
+* fixed character endpoint to lowercase for a proper verification support ([558a018](https://github.com/xivapi/angular-client/commit/558a018))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/xivapi/angular-client/compare/v0.9.0...v0.10.0) (2018-11-20)
 
