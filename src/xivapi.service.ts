@@ -82,7 +82,17 @@ export class XivapiService {
      */
     public getCharacter(lodestoneId: number | string, options?: XivapiCharacterOptions,
                         details?: 'Friends' | 'Achievements' | 'Gearsets' | 'Record' | 'FreeCompany'): Observable<CharacterResponse> {
-        return this.request<any>(`/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
+        return this.request<CharacterResponse>(`/Character/${lodestoneId}${details ? '/' + details : ''}`, options);
+    }
+
+    /**
+     * Gets character verification state using /character/<id>/verification endpoint
+     *
+     * @param lodestoneId LodestoneID of the character to verify.
+     * @param options Options of the request.
+     */
+    public getCharacterVerification(lodestoneId: number | string, options?: XivapiCharacterOptions): Observable<CharacterVerification> {
+        return this.request<CharacterVerification>(`/Character/${lodestoneId}/verification`, options);
     }
 
     /**
