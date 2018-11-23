@@ -23,7 +23,7 @@ export interface XivapiCharacterOptions extends XivapiOptions {
      * * For profile, this will include information about Grand Companies, full Minion/Mount information etc.
      * * For gear, this will include equipment, dye, materia and glamour item details.
      */
-    extend?: 0 | 1;
+    extended?: 0 | 1;
 
     /**
      * Include characters Free Company information
