@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 import {
     CharacterSearchResult,
     Pagination,
@@ -16,6 +16,7 @@ import { CharacterResponse, CharacterVerification } from './model/schema/charact
 import { XIVAPI_KEY } from './xivapi-client.module';
 import { MarketboardItem } from './model/schema/market/marketboard-item';
 import { MarketboardItemHistory } from './model/schema/market/marketboard-item-history';
+import { first, mergeMap, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class XivapiService {
@@ -26,7 +27,11 @@ export class XivapiService {
     public static readonly API_BASE_URL: string = 'https://xivapi.com';
     public static readonly STAGING_API_BASE_URL: string = 'https://staging.xivapi.com';
 
+    private apiLimitTimer$: Observable<number> = interval(1000);
+    private requestsSent: number = 0;
+
     constructor(@Inject(XIVAPI_KEY) protected readonly apiKey: string, private http: HttpClient) {
+        this.apiLimitTimer$.subscribe(() => this.requestsSent = 0);
     }
 
     /**
@@ -70,7 +75,13 @@ export class XivapiService {
         if (options.staging) {
             queryParams = queryParams.delete('staging');
         }
-        return this.http.get<any>(`${baseUrl}/Search`, {params: queryParams});
+        if (this.requestsSent < 10) {
+            this.requestsSent++;
+            return this.http.get<any>(`${baseUrl}/Search`, {params: queryParams});
+        }
+        return this.apiLimitTimer$.pipe(first(), switchMap(() => {
+            return this.search(options);
+        }));
     }
 
     /**
@@ -235,7 +246,13 @@ export class XivapiService {
         } else {
             baseUrl = XivapiService.API_BASE_URL;
         }
-        return this.http.get<any>(`${baseUrl}${endpoint}`, {params: queryParams});
+        if (this.requestsSent < 10) {
+            this.requestsSent++;
+            return this.http.get<any>(`${baseUrl}${endpoint}`, {params: queryParams});
+        }
+        return this.apiLimitTimer$.pipe(first(), mergeMap(() => {
+            return this.request<T>(endpoint, params);
+        }));
     }
 
     private prepareQueryString(options?: XivapiOptions): HttpParams {
