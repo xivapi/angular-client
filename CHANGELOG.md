@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.10.3"></a>
+## [0.10.3](https://github.com/xivapi/angular-client/compare/v0.10.2...v0.10.3) (2018-12-23)
+
+
+### Bug Fixes
+
+* implemented timer to avoid hitting api limit ([860ac04](https://github.com/xivapi/angular-client/commit/860ac04))
+
+
+
 <a name="0.10.2"></a>
 ## [0.10.2](https://github.com/xivapi/angular-client/compare/v0.10.1...v0.10.2) (2018-11-23)
 
