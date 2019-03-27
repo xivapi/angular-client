@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { interval, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
     CharacterSearchResult,
     Pagination,
@@ -13,10 +13,9 @@ import {
     XivapiSearchOptions
 } from './model';
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
-import { XIVAPI_KEY } from './xivapi-client.module';
 import { MarketboardItem } from './model/schema/market/marketboard-item';
 import { MarketboardItemHistory } from './model/schema/market/marketboard-item-history';
-import { first, mergeMap, switchMap } from 'rxjs/operators';
+import { GCF_URL } from './xivapi-client.module';
 
 @Injectable()
 export class XivapiService {
@@ -27,11 +26,7 @@ export class XivapiService {
     public static readonly API_BASE_URL: string = 'https://xivapi.com';
     public static readonly STAGING_API_BASE_URL: string = 'https://staging.xivapi.com';
 
-    private apiLimitTimer$: Observable<number> = interval(1000);
-    private requestsSent: number = 0;
-
-    constructor(@Inject(XIVAPI_KEY) protected readonly apiKey: string, private http: HttpClient) {
-        this.apiLimitTimer$.subscribe(() => this.requestsSent = 0);
+    constructor(private http: HttpClient, @Inject(GCF_URL) private GCFUrl?: string) {
     }
 
     /**
@@ -68,20 +63,11 @@ export class XivapiService {
             }, '').slice(0, -1);
             queryParams = queryParams.set('filters', filterChain);
         }
-        if (this.apiKey !== undefined) {
-            queryParams = queryParams.set('key', this.apiKey);
-        }
         const baseUrl: string = options.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
         if (options.staging) {
             queryParams = queryParams.delete('staging');
         }
-        if (this.requestsSent < 10) {
-            this.requestsSent++;
-            return this.http.get<any>(`${baseUrl}/Search`, {params: queryParams});
-        }
-        return this.apiLimitTimer$.pipe(first(), switchMap(() => {
-            return this.search(options);
-        }));
+        return this.doGet<any>(`${baseUrl}/Search`, queryParams);
     }
 
     /**
@@ -246,20 +232,11 @@ export class XivapiService {
         } else {
             baseUrl = XivapiService.API_BASE_URL;
         }
-        if (this.requestsSent < 10) {
-            this.requestsSent++;
-            return this.http.get<any>(`${baseUrl}${endpoint}`, {params: queryParams});
-        }
-        return this.apiLimitTimer$.pipe(first(), mergeMap(() => {
-            return this.request<T>(endpoint, params);
-        }));
+        return this.doGet<any>(`${baseUrl}${endpoint}`, queryParams);
     }
 
     private prepareQueryString(options?: XivapiOptions): HttpParams {
         let queryString: HttpParams = new HttpParams();
-        if (this.apiKey !== undefined) {
-            queryString = queryString.set('key', this.apiKey);
-        }
         if (options === null || options === undefined) {
             return queryString;
         }
@@ -273,5 +250,13 @@ export class XivapiService {
             }
         });
         return queryString;
+    }
+
+    private doGet<T>(url: string, queryParams: HttpParams): Observable<T> {
+        if (this.GCFUrl) {
+            const queryString: string = queryParams.toString();
+            return this.http.get<T>(this.GCFUrl, {params: {url: btoa(`${url}${queryString.length > 0 ? `?${queryString}` : ''}`)}});
+        }
+        return this.http.get<T>(url);
     }
 }

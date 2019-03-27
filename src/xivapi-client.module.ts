@@ -4,7 +4,7 @@ import { XivapiService } from './xivapi.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { XivapiServiceFactory } from './xivapi-service-factory';
 
-export const XIVAPI_KEY: InjectionToken<string> = new InjectionToken('XIVAPI_KEY');
+export const GCF_URL: InjectionToken<string> = new InjectionToken('GCF_URL');
 
 @NgModule({
     imports: [
@@ -15,18 +15,18 @@ export const XIVAPI_KEY: InjectionToken<string> = new InjectionToken('XIVAPI_KEY
 })
 export class XivapiClientModule {
 
-    static forRoot(key: string): ModuleWithProviders {
+    static forRoot(GCFUrl: string): ModuleWithProviders {
         return {
             ngModule: XivapiClientModule,
             providers: [
                 {
-                    provide: XIVAPI_KEY,
-                    useValue: key
+                    provide: GCF_URL,
+                    useValue: GCFUrl
                 },
                 {
                     provide: XivapiService,
                     useFactory: XivapiServiceFactory,
-                    deps: [XIVAPI_KEY, HttpClient]
+                    deps: [HttpClient, GCF_URL]
                 }
             ]
         };

@@ -1,6 +1,6 @@
 import { XivapiService } from './xivapi.service';
 import { HttpClient } from '@angular/common/http';
 
-export function XivapiServiceFactory(key: string, http: HttpClient): XivapiService {
-    return new XivapiService(key, http);
+export function XivapiServiceFactory(http: HttpClient, GCFUrl: string): XivapiService {
+    return new XivapiService(http, GCFUrl);
 }

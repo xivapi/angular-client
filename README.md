@@ -24,7 +24,7 @@ Add `XivapiClientModule` to your `AppModule` imports:
     ],
     imports: [
         ...
-        XivapiClientModule.forRoot('my-api-key'),        
+        XivapiClientModule.forRoot(),        
         ...
     ],
     bootstrap: [AppComponent]
@@ -50,3 +50,40 @@ export class FooComponent {
     }
 }
 ```
+
+## Use with private_key (Google Cloud Function)
+
+ - Create a google cloud function, name it as you want.
+ - Insert following code (with your key):
+ ```js
+ exports.xivapiProxy = (req, res) => {
+   let request = require('request');
+   const apiKey = '<your api key>>';
+   res.set('Access-Control-Allow-Origin', '<your allowed origins>')
+      .set('Access-Control-Allow-Headers', 'Content-Type');
+   const url = Buffer.from(req.query.url, 'base64').toString();
+   request(
+     {
+       url:`${url}${url.indexOf('?') > -1 ? '&':'?'}private_key=${apiKey}`,
+     }, 
+     function(error, response, body) {
+     let errorBody = JSON.parse(body);
+ 	let errorMessage = errorBody.error || errorBody.message;
+     if (error || errorMessage) {
+       res.status(400).send(errorMessage || 'Unknown Error');
+     } else {
+       res.status(200).set('Content-Type', 'application/json').send(body);
+     }
+   });
+ };
+ ```
+ - Enable proxy mode inside the api module:
+ ```ts
+    XivapiClientModule.forRoot('<GCF trigger url>')
+ ```
+ 
+ Example url: https://us-central1-myproject.cloudfunctions.net/xivapi-proxy
+ 
+ Keep in mind that you can enable it based on the current environment, simply give `null` as proxy url if environment isn't prod,
+ to use "normal" mode in order to get better debugging
+ when using dev environment.

@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.10.7"></a>
+## [0.10.7](https://github.com/xivapi/angular-client/compare/v0.10.6...v0.10.7) (2019-03-27)
+
+
+### Code Refactoring
+
+* changed the way we handle api key and added a proxy mode ([a1d6843](https://github.com/xivapi/angular-client/commit/a1d6843))
+
+
+### BREAKING CHANGES
+
+* You have to remove your api key from the `forRoot` call and use proxy url if you want to use one.
+
+
+
 <a name="0.10.6"></a>
 ## [0.10.6](https://github.com/xivapi/angular-client/compare/v0.10.4...v0.10.6) (2018-12-23)
 
