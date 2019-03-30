@@ -257,6 +257,6 @@ export class XivapiService {
             const queryString: string = queryParams.toString();
             return this.http.get<T>(this.GCFUrl, {params: {url: btoa(`${url}${queryString.length > 0 ? `?${queryString}` : ''}`)}});
         }
-        return this.http.get<T>(url);
+        return this.http.get<T>(url, {params: queryParams});
     }
 }
