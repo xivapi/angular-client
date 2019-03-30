@@ -15,7 +15,7 @@ export const GCF_URL: InjectionToken<string> = new InjectionToken('GCF_URL');
 })
 export class XivapiClientModule {
 
-    static forRoot(GCFUrl: string): ModuleWithProviders {
+    static forRoot(GCFUrl?: string): ModuleWithProviders {
         return {
             ngModule: XivapiClientModule,
             providers: [
