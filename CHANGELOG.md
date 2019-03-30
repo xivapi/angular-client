@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/xivapi/angular-client/compare/v1.0.0...v1.0.1) (2019-03-30)
+
+
+### Bug Fixes
+
+* **core:** GCFUrl is now properly optional ([b7e9627](https://github.com/xivapi/angular-client/commit/b7e9627))
+* **search:** fixed an issue with search when not using GCF ([9526b23](https://github.com/xivapi/angular-client/commit/9526b23))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/xivapi/angular-client/compare/v0.10.6...v1.0.0) (2019-03-27)
 
