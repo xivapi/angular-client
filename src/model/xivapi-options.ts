@@ -42,4 +42,9 @@ export interface XivapiOptions {
      * Should this request be fired against staging environment? NOT SUITED FOR PRODUCTION !!!
      */
     staging?: boolean;
+
+    /**
+     * Servers for the market endpoint.
+     */
+    servers?: string[];
 }

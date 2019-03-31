@@ -1,22 +1,16 @@
 export interface MarketboardPrice {
+    Added: number;
+    CreatorSignatureID: string;
     CraftSignature: string;
-    ID: number;
-    IsCrafted: false;
-    IsHQ: number;
+    ID: string;
+    IsCrafted: boolean;
+    IsHQ: boolean;
     Materia: any[];
     PricePerUnit: number;
     PriceTotal: number;
     Quantity: number;
+    RetainerID: string;
     RetainerName: string;
-    Stain: number;
-    Town: {
-        ID: number;
-        Icon: string;
-        Name: string;
-        Name_de: string;
-        Name_fr: string;
-        Name_en: string;
-        Name_ja: string;
-        Url: string;
-    };
+    StainID: number;
+    TownID: number;
 }

@@ -14,7 +14,6 @@ import {
 } from './model';
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
 import { MarketboardItem } from './model/schema/market/marketboard-item';
-import { MarketboardItemHistory } from './model/schema/market/marketboard-item-history';
 import { GCF_URL } from './xivapi-client.module';
 
 @Injectable()
@@ -207,18 +206,21 @@ export class XivapiService {
      * @param options Options of the request.
      */
     public getMarketBoardItem(server: string, itemId: number, options?: XivapiOptions): Observable<MarketboardItem> {
-        return this.request<MarketboardItem>(`/market/${server}/items/${itemId}`, options);
+        return this.request<MarketboardItem>(`/market/${server}/item/${itemId}`, options);
     }
 
     /**
-     * Gets marketboard history for a given item.
+     * Gets marketboard informations for a given item on multiple servers.
      *
-     * @param server The server to use for marketboard informations.
+     * @param servers
      * @param itemId The item you want informations on.
      * @param options Options of the request.
      */
-    public getMarketBoardItemHistory(server: string, itemId: number, options?: XivapiOptions): Observable<MarketboardItemHistory> {
-        return this.request<MarketboardItemHistory>(`/market/${server}/items/${itemId}/history`, options);
+    public getMarketBoardItemForServers(servers: string[],
+                                        itemId: number,
+                                        options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }> {
+        options.servers = servers;
+        return this.request<{ [index: string]: MarketboardItem[] }>(`/market/item/${itemId}`, options);
     }
 
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
