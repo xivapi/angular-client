@@ -99,6 +99,13 @@ export class XivapiService {
     }
 
     /**
+     * Gets the current list of available servers, per DC.
+     */
+    public getDCList(): Observable<{ [index: string]: string[] }> {
+        return this.request<{ [index: string]: string[] }>(`/servers/dc`);
+    }
+
+    /**
      * Search for a character on **The Lodestone**. This does not search XIVAPI but instead it goes directly to
      * lodestone so the response will be "real-time". Responses are cached for 1 hour,
      * it is important to know that Lodestone has a ~6 hour varnish and CDN cache.
@@ -223,6 +230,20 @@ export class XivapiService {
         return this.request<{ [index: string]: MarketboardItem[] }>(`/market/item/${itemId}`, options);
     }
 
+    /**
+     * Gets marketboard informations for a given item.
+     *
+     * @param datacenter The datacenter to use for marketboard informations.
+     * @param itemId The item you want informations on.
+     * @param options Options of the request.
+     */
+    public getMarketBoardItemCrossServer(datacenter: string, itemId: number,
+                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }> {
+        options.extraQueryParams = options.extraQueryParams || {};
+        options.extraQueryParams['dc'] = datacenter;
+        return this.request<{ [index: string]: MarketboardItem }>(`/market/items/${itemId}`, options);
+    }
+
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         let queryParams: HttpParams = this.prepareQueryString(params);
         let baseUrl: string;
@@ -242,15 +263,24 @@ export class XivapiService {
         if (options === null || options === undefined) {
             return queryString;
         }
-        Object.keys(options).forEach(optionKey => {
-            // @ts-ignore
-            const value: any = options[optionKey] as any;
-            if (value instanceof Array) {
-                queryString = queryString.set(optionKey, value.join(','));
-            } else {
-                queryString = queryString.set(optionKey, value.toString());
-            }
-        });
+        Object.keys(options)
+            .filter(key => key !== 'extraQueryParams')
+            .forEach(optionKey => {
+                // @ts-ignore
+                const value: any = options[optionKey] as any;
+                if (value instanceof Array) {
+                    queryString = queryString.set(optionKey, value.join(','));
+                } else {
+                    queryString = queryString.set(optionKey, value.toString());
+                }
+            });
+        if (options.extraQueryParams !== undefined) {
+            Object.keys(options.extraQueryParams)
+                .forEach(key => {
+                    // @ts-ignore
+                    queryString.set(key, options.extraQueryParams[key].toString());
+                });
+        }
         return queryString;
     }
 
