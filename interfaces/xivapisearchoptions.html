@@ -87,11 +87,13 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapisearchoptions.html#columns" class="tsd-kind-icon">columns</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapisearchoptions.html#extraqueryparams" class="tsd-kind-icon">extra<wbr>Query<wbr>Params</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#filters" class="tsd-kind-icon">filters</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#indexes" class="tsd-kind-icon">indexes</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapisearchoptions.html#language" class="tsd-kind-icon">language</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#limit" class="tsd-kind-icon">limit</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#page" class="tsd-kind-icon">page</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapisearchoptions.html#servers" class="tsd-kind-icon">servers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#sort_field" class="tsd-kind-icon">sort_<wbr>field</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="xivapisearchoptions.html#sort_order" class="tsd-kind-icon">sort_<wbr>order</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="xivapisearchoptions.html#staging" class="tsd-kind-icon">staging</a></li>
@@ -113,7 +115,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#columns">columns</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-options.ts#L29">model/xivapi-options.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L29">model/xivapi-options.ts:29</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -132,13 +134,29 @@
 						By default these are pretty strict so it is recommended to create a Developer App to be provided a key to increase your limits.</p>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="extraqueryparams" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> extra<wbr>Query<wbr>Params</h3>
+					<div class="tsd-signature tsd-kind-icon">extra<wbr>Query<wbr>Params<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#extraqueryparams">extraQueryParams</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L54">model/xivapi-options.ts:54</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Extra query params to add to the request.</p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="filters" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> filters</h3>
 					<div class="tsd-signature tsd-kind-icon">filters<span class="tsd-signature-symbol">:</span> <a href="xivapisearchfilter.html" class="tsd-signature-type">XivapiSearchFilter</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L22">model/xivapi-search-options.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L22">model/xivapi-search-options.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,10 +169,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="indexes" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> indexes</h3>
-					<div class="tsd-signature tsd-kind-icon">indexes<span class="tsd-signature-symbol">:</span> <a href="../enums/searchindex.html" class="tsd-signature-type">SearchIndex</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">indexes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SearchIndex</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L10">model/xivapi-search-options.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L10">model/xivapi-search-options.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -170,7 +188,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#language">language</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-options.ts#L10">model/xivapi-options.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L10">model/xivapi-options.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L57">model/xivapi-search-options.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L57">model/xivapi-search-options.ts:57</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -208,12 +226,28 @@
 					<div class="tsd-signature tsd-kind-icon">page<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L40">model/xivapi-search-options.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L40">model/xivapi-search-options.ts:40</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Pull content from a specific page in the search results.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="servers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> servers</h3>
+					<div class="tsd-signature tsd-kind-icon">servers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#servers">servers</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L49">model/xivapi-options.ts:49</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Servers for the market endpoint.</p>
 						</div>
 					</div>
 				</section>
@@ -223,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">sort_<wbr>field<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L45">model/xivapi-search-options.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L45">model/xivapi-search-options.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -238,7 +272,7 @@
 					<div class="tsd-signature tsd-kind-icon">sort_<wbr>order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"asc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"desc"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L50">model/xivapi-search-options.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L50">model/xivapi-search-options.ts:50</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -250,11 +284,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="staging" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> staging</h3>
-					<div class="tsd-signature tsd-kind-icon">staging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span></div>
+					<div class="tsd-signature tsd-kind-icon">staging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#staging">staging</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-options.ts#L44">model/xivapi-options.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L44">model/xivapi-options.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -269,7 +303,7 @@
 					<div class="tsd-signature tsd-kind-icon">string<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L15">model/xivapi-search-options.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L15">model/xivapi-search-options.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -284,7 +318,7 @@
 					<div class="tsd-signature tsd-kind-icon">string_<wbr>algo<span class="tsd-signature-symbol">:</span> <a href="../enums/searchalgo.html" class="tsd-signature-type">SearchAlgo</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L28">model/xivapi-search-options.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L28">model/xivapi-search-options.ts:28</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -300,7 +334,7 @@
 					<div class="tsd-signature tsd-kind-icon">string_<wbr>column<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-search-options.ts#L35">model/xivapi-search-options.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-search-options.ts#L35">model/xivapi-search-options.ts:35</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -318,7 +352,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="xivapioptions.html">XivapiOptions</a>.<a href="xivapioptions.html#tags">tags</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/model/xivapi-options.ts#L39">model/xivapi-options.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/model/xivapi-options.ts#L39">model/xivapi-options.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -345,9 +379,6 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="../enums/searchalgo.html" class="tsd-kind-icon">Search<wbr>Algo</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="../enums/searchindex.html" class="tsd-kind-icon">Search<wbr>Index</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="../enums/xivapiendpoint.html" class="tsd-kind-icon">Xivapi<wbr>Endpoint</a>
@@ -387,6 +418,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="marketboardhistory.html" class="tsd-kind-icon">Marketboard<wbr>History</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="marketboarditem.html" class="tsd-kind-icon">Marketboard<wbr>Item</a>
@@ -429,6 +463,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="xivapisearchoptions.html#columns" class="tsd-kind-icon">columns</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="xivapisearchoptions.html#extraqueryparams" class="tsd-kind-icon">extra<wbr>Query<wbr>Params</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="xivapisearchoptions.html#filters" class="tsd-kind-icon">filters</a>
 							</li>
@@ -443,6 +480,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="xivapisearchoptions.html#page" class="tsd-kind-icon">page</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="xivapisearchoptions.html#servers" class="tsd-kind-icon">servers</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="xivapisearchoptions.html#sort_field" class="tsd-kind-icon">sort_<wbr>field</a>
@@ -470,7 +510,7 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-variable">
-						<a href="../globals.html#xivapi_key" class="tsd-kind-icon">XIVAPI_<wbr>KEY</a>
+						<a href="../globals.html#gcf_url" class="tsd-kind-icon">GCF_<wbr>URL</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#xivapiservicefactory" class="tsd-kind-icon">Xivapi<wbr>Service<wbr>Factory</a>

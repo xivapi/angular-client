@@ -87,7 +87,6 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="xivapiservice.html#apikey" class="tsd-kind-icon">api<wbr>Key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xivapiservice.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xivapiservice.html#staging_api_base_url" class="tsd-kind-icon">STAGING_<wbr>API_<wbr>BASE_<wbr>URL</a></li>
 							</ul>
@@ -98,11 +97,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="xivapiservice.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getcharacter" class="tsd-kind-icon">get<wbr>Character</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getcharacterverification" class="tsd-kind-icon">get<wbr>Character<wbr>Verification</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getdclist" class="tsd-kind-icon">getDCList</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getfreecompany" class="tsd-kind-icon">get<wbr>Free<wbr>Company</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getlinkshell" class="tsd-kind-icon">get<wbr>Linkshell</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="xivapiservice.html#getlist" class="tsd-kind-icon">get<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getmarketboarditem" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getmarketboarditemhistory" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>History</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getmarketboarditemcrossserver" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>Cross<wbr>Server</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getmarketboarditemforservers" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>For<wbr>Servers</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getpatchlist" class="tsd-kind-icon">get<wbr>Patch<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getpvpteam" class="tsd-kind-icon">get<wbr>PvPTeam</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xivapiservice.html#getserverlist" class="tsd-kind-icon">get<wbr>Server<wbr>List</a></li>
@@ -122,22 +123,22 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Xivapi<wbr>Service<span class="tsd-signature-symbol">(</span>apiKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="xivapiservice.html" class="tsd-signature-type">XivapiService</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Xivapi<wbr>Service<span class="tsd-signature-symbol">(</span>http<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HttpClient</span>, GCFUrl<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="xivapiservice.html" class="tsd-signature-type">XivapiService</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L27">xivapi.service.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L26">xivapi.service.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>apiKey: <span class="tsd-signature-type">string</span></h5>
+									<h5>http: <span class="tsd-signature-type">HttpClient</span></h5>
 								</li>
 								<li>
-									<h5>http: <span class="tsd-signature-type">HttpClient</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> GCFUrl: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="xivapiservice.html" class="tsd-signature-type">XivapiService</a></h4>
@@ -147,23 +148,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="apikey" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> api<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">api<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L29">xivapi.service.ts:29</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 					<a name="api_base_url" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> API_<wbr>BASE_<wbr>URL</h3>
 					<div class="tsd-signature tsd-kind-icon">API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://xivapi.com&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L26">xivapi.service.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L25">xivapi.service.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -178,7 +169,7 @@
 					<div class="tsd-signature tsd-kind-icon">STAGING_<wbr>API_<wbr>BASE_<wbr>URL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;https://staging.xivapi.com&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L27">xivapi.service.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L26">xivapi.service.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -195,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L39">xivapi.service.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L38">xivapi.service.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,7 +235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L83">xivapi.service.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L79">xivapi.service.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -287,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L94">xivapi.service.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L90">xivapi.service.ts:90</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -315,6 +306,28 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdclist" class="tsd-anchor"></a>
+					<h3>getDCList</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">getDCList<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L104">xivapi.service.ts:104</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the current list of available servers, per DC.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getfreecompany" class="tsd-anchor"></a>
 					<h3>get<wbr>Free<wbr>Company</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -324,7 +337,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L170">xivapi.service.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L173">xivapi.service.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -367,7 +380,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L182">xivapi.service.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L185">xivapi.service.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,7 +423,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L49">xivapi.service.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L48">xivapi.service.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +466,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L212">xivapi.service.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L215">xivapi.service.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -487,29 +500,29 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getmarketboarditemhistory" class="tsd-anchor"></a>
-					<h3>get<wbr>Market<wbr>Board<wbr>Item<wbr>History</h3>
+					<a name="getmarketboarditemcrossserver" class="tsd-anchor"></a>
+					<h3>get<wbr>Market<wbr>Board<wbr>Item<wbr>Cross<wbr>Server</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>History<span class="tsd-signature-symbol">(</span>server<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, itemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/marketboarditemhistory.html" class="tsd-signature-type">MarketboardItemHistory</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>Cross<wbr>Server<span class="tsd-signature-symbol">(</span>datacenter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, itemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L223">xivapi.service.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L240">xivapi.service.ts:240</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets marketboard history for a given item.</p>
+									<p>Gets marketboard informations for a given item.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>server: <span class="tsd-signature-type">string</span></h5>
+									<h5>datacenter: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The server to use for marketboard informations.</p>
+										<p>The datacenter to use for marketboard informations.</p>
 									</div>
 								</li>
 								<li>
@@ -519,13 +532,53 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Options of the request.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/marketboarditemhistory.html" class="tsd-signature-type">MarketboardItemHistory</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmarketboarditemforservers" class="tsd-anchor"></a>
+					<h3>get<wbr>Market<wbr>Board<wbr>Item<wbr>For<wbr>Servers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>For<wbr>Servers<span class="tsd-signature-symbol">(</span>servers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, itemId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L226">xivapi.service.ts:226</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets marketboard informations for a given item on multiple servers.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>servers: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>itemId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The item you want informations on.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/xivapioptions.html" class="tsd-signature-type">XivapiOptions</a><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options of the request.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -539,7 +592,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L201">xivapi.service.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L204">xivapi.service.ts:204</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -570,7 +623,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L193">xivapi.service.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L196">xivapi.service.ts:196</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -607,7 +660,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L101">xivapi.service.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L97">xivapi.service.ts:97</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -629,7 +682,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L227">xivapi.service.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L247">xivapi.service.ts:247</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -661,7 +714,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L58">xivapi.service.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L57">xivapi.service.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -692,7 +745,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L117">xivapi.service.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L120">xivapi.service.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -740,7 +793,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L141">xivapi.service.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L144">xivapi.service.ts:144</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -789,7 +842,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/480b9f3/src/xivapi.service.ts#L158">xivapi.service.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/013d813/src/xivapi.service.ts#L161">xivapi.service.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -831,9 +884,6 @@
 					<li class=" tsd-kind-enum">
 						<a href="../enums/searchalgo.html" class="tsd-kind-icon">Search<wbr>Algo</a>
 					</li>
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="../enums/searchindex.html" class="tsd-kind-icon">Search<wbr>Index</a>
-					</li>
 					<li class=" tsd-kind-enum">
 						<a href="../enums/xivapiendpoint.html" class="tsd-kind-icon">Xivapi<wbr>Endpoint</a>
 					</li>
@@ -847,9 +897,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="xivapiservice.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="xivapiservice.html#apikey" class="tsd-kind-icon">api<wbr>Key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="xivapiservice.html#api_base_url" class="tsd-kind-icon">API_<wbr>BASE_<wbr>URL</a>
@@ -867,6 +914,9 @@
 								<a href="xivapiservice.html#getcharacterverification" class="tsd-kind-icon">get<wbr>Character<wbr>Verification</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="xivapiservice.html#getdclist" class="tsd-kind-icon">getDCList</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="xivapiservice.html#getfreecompany" class="tsd-kind-icon">get<wbr>Free<wbr>Company</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -879,7 +929,10 @@
 								<a href="xivapiservice.html#getmarketboarditem" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="xivapiservice.html#getmarketboarditemhistory" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>History</a>
+								<a href="xivapiservice.html#getmarketboarditemcrossserver" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>Cross<wbr>Server</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="xivapiservice.html#getmarketboarditemforservers" class="tsd-kind-icon">get<wbr>Market<wbr>Board<wbr>Item<wbr>For<wbr>Servers</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="xivapiservice.html#getpatchlist" class="tsd-kind-icon">get<wbr>Patch<wbr>List</a>
@@ -940,6 +993,9 @@
 						<a href="../interfaces/grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/marketboardhistory.html" class="tsd-kind-icon">Marketboard<wbr>History</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/marketboarditem.html" class="tsd-kind-icon">Marketboard<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -976,7 +1032,7 @@
 						<a href="../interfaces/xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="../globals.html#xivapi_key" class="tsd-kind-icon">XIVAPI_<wbr>KEY</a>
+						<a href="../globals.html#gcf_url" class="tsd-kind-icon">GCF_<wbr>URL</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="../globals.html#xivapiservicefactory" class="tsd-kind-icon">Xivapi<wbr>Service<wbr>Factory</a>

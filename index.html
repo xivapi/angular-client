@@ -74,23 +74,22 @@
 				<p>Simply run <code>npm i --save @xivapi/angular-client</code></p>
 				<h2 id="quick-start">Quick start</h2>
 				<p>Add <code>XivapiClientModule</code> to your <code>AppModule</code> imports:</p>
-				<pre><code class="lang-ts"><span class="hljs-meta">@NgModule</span>({
+				<pre><code class="language-ts"><span class="hljs-meta">@NgModule</span>({
     declarations: [
         AppComponent,
     ],
     imports: [
         ...
-        XivapiClientModule.forRoot(<span class="hljs-string">'my-api-key'</span>),        
+        XivapiClientModule.forRoot(),        
         ...
     ],
     bootstrap: [AppComponent]
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppModule {
-}
-</code></pre>
+}</code></pre>
 				<p>In the other modules, don&#39;t call <code>forRoot</code> again, just import the module itself.</p>
 				<p>Then you can simply inject the service wherever you want to use it:</p>
-				<pre><code class="lang-ts"><span class="hljs-meta">@Component</span>({
+				<pre><code class="language-ts"><span class="hljs-meta">@Component</span>({
     ...
 })
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> FooComponent {
@@ -100,8 +99,39 @@
     <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> xivapi: XivapiService</span>){
         <span class="hljs-keyword">this</span>.items$ = <span class="hljs-keyword">this</span>.xivapi.getList(XivapiEndpoint.Items);
     }
-}
-</code></pre>
+}</code></pre>
+				<h2 id="use-with-private_key-google-cloud-function-">Use with private_key (Google Cloud Function)</h2>
+				<ul>
+					<li>Create a google cloud function, name it as you want.</li>
+					<li>Insert following code (with your key):<pre><code class="language-js">exports.xivapiProxy = <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+<span class="hljs-keyword">let</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'request'</span>);
+<span class="hljs-keyword">const</span> apiKey = <span class="hljs-string">'&lt;your api key&gt;&gt;'</span>;
+res.set(<span class="hljs-string">'Access-Control-Allow-Origin'</span>, <span class="hljs-string">'&lt;your allowed origins&gt;'</span>)
+   .set(<span class="hljs-string">'Access-Control-Allow-Headers'</span>, <span class="hljs-string">'Content-Type'</span>);
+<span class="hljs-keyword">const</span> url = Buffer.from(req.query.url, <span class="hljs-string">'base64'</span>).toString();
+request(
+  {
+    <span class="hljs-attr">url</span>:<span class="hljs-string">`<span class="hljs-subst">${url}</span><span class="hljs-subst">${url.indexOf(<span class="hljs-string">'?'</span>) &gt; <span class="hljs-number">-1</span> ? <span class="hljs-string">'&amp;'</span>:<span class="hljs-string">'?'</span>}</span>private_key=<span class="hljs-subst">${apiKey}</span>`</span>,
+  }, 
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error, response, body</span>) </span>{
+  <span class="hljs-keyword">let</span> errorBody = <span class="hljs-built_in">JSON</span>.parse(body);
+  <span class="hljs-keyword">let</span> errorMessage = errorBody.error || errorBody.message;
+  <span class="hljs-keyword">if</span> (error || errorMessage) {
+    res.status(<span class="hljs-number">400</span>).send(errorMessage || <span class="hljs-string">'Unknown Error'</span>);
+  } <span class="hljs-keyword">else</span> {
+    res.status(<span class="hljs-number">200</span>).set(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'application/json'</span>).send(body);
+  }
+});
+};</code></pre>
+					</li>
+					<li><p>Enable proxy mode inside the api module:</p>
+						<pre><code class="language-ts"> XivapiClientModule.forRoot(<span class="hljs-string">'&lt;GCF trigger url&gt;'</span>)</code></pre>
+						<p>Example url: <a href="https://us-central1-myproject.cloudfunctions.net/xivapi-proxy">https://us-central1-myproject.cloudfunctions.net/xivapi-proxy</a></p>
+						<p>Keep in mind that you can enable it based on the current environment, simply give <code>null</code> as proxy url if environment isn&#39;t prod,
+							to use &quot;normal&quot; mode in order to get better debugging
+						when using dev environment.</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -116,9 +146,6 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
 						<a href="enums/searchalgo.html" class="tsd-kind-icon">Search<wbr>Algo</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/searchindex.html" class="tsd-kind-icon">Search<wbr>Index</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/xivapiendpoint.html" class="tsd-kind-icon">Xivapi<wbr>Endpoint</a>
@@ -160,6 +187,9 @@
 						<a href="interfaces/grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/marketboardhistory.html" class="tsd-kind-icon">Marketboard<wbr>History</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/marketboarditem.html" class="tsd-kind-icon">Marketboard<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -196,7 +226,7 @@
 						<a href="interfaces/xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#xivapi_key" class="tsd-kind-icon">XIVAPI_<wbr>KEY</a>
+						<a href="globals.html#gcf_url" class="tsd-kind-icon">GCF_<wbr>URL</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#xivapiservicefactory" class="tsd-kind-icon">Xivapi<wbr>Service<wbr>Factory</a>
