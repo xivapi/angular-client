@@ -241,7 +241,7 @@ export class XivapiService {
                                          options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }> {
         options.extraQueryParams = options.extraQueryParams || {};
         options.extraQueryParams['dc'] = datacenter;
-        return this.request<{ [index: string]: MarketboardItem }>(`/market/items/${itemId}`, options);
+        return this.request<{ [index: string]: MarketboardItem }>(`/market/item/${itemId}`, options);
     }
 
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
@@ -278,7 +278,7 @@ export class XivapiService {
             Object.keys(options.extraQueryParams)
                 .forEach(key => {
                     // @ts-ignore
-                    queryString.set(key, options.extraQueryParams[key].toString());
+                    queryString = queryString.set(key, options.extraQueryParams[key].toString());
                 });
         }
         return queryString;
