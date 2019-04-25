@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/xivapi/angular-client/compare/v1.1.0...v1.1.1) (2019-04-25)
+
+
+### Bug Fixes
+
+* **marketboard:** fixed wrong path for cross server requests ([be7654c](https://github.com/xivapi/angular-client/commit/be7654c))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/xivapi/angular-client/compare/v1.0.2...v1.1.0) (2019-04-25)
 
