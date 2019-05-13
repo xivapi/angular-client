@@ -53,4 +53,15 @@ describe('Client tests', () => {
         expect(req.request.params.has('string')).toBeTruthy();
         expect(req.request.params.get('string')).toEqual('legendary');
     });
+
+    it('Should search Lore properly with custom data columns', () => {
+        const service: XivapiService = new XivapiService(httpClient);
+        service.searchLore('legendary', ['Icon']).subscribe();
+        const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
+            .find(row => row.request.url === `${XivapiService.API_BASE_URL}/lore`);
+        expect(req).not.toBeUndefined();
+        expect(req.request.params.has('string')).toBeTruthy();
+        expect(req.request.params.get('string')).toEqual('legendary');
+        expect(req.request.params.get('columns')).toEqual('Context,Source,SourceID,Text,Data.Icon');
+    });
 });

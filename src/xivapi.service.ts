@@ -44,9 +44,20 @@ export class XivapiService {
      * Makes a request on a given endpoint with an id.
      *
      * @param query Text to search inside the lore.
+     * @param dataColumns
      */
-    public searchLore(query: string): Observable<LoreSearchResult> {
-        return this.doGet<LoreSearchResult>(`${XivapiService.API_BASE_URL}/lore`, new HttpParams().set('string', query));
+    public searchLore(query: string, dataColumns?: string[]): Observable<LoreSearchResult> {
+        let httpParams: HttpParams = new HttpParams().set('string', query);
+        if (dataColumns && dataColumns.length > 0) {
+            httpParams = httpParams.set('columns', [
+                'Context',
+                'Source',
+                'SourceID',
+                'Text',
+                ...dataColumns.map(col => `Data.${col}`)
+            ].join(','));
+        }
+        return this.doGet<LoreSearchResult>(`${XivapiService.API_BASE_URL}/lore`, httpParams);
     }
 
     /**
