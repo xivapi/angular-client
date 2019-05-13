@@ -43,4 +43,14 @@ describe('Client tests', () => {
         expect(req.request.params.has('url')).toBeTruthy();
         expect(req.request.params.get('url')).toEqual('aHR0cHM6Ly94aXZhcGkuY29tL0l0ZW0vMTIwODc=');
     });
+
+    it('Should search Lore properly', () => {
+        const service: XivapiService = new XivapiService(httpClient);
+        service.searchLore('legendary').subscribe();
+        const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
+            .find(row => row.request.url === `${XivapiService.API_BASE_URL}/lore`);
+        expect(req).not.toBeUndefined();
+        expect(req.request.params.has('string')).toBeTruthy();
+        expect(req.request.params.get('string')).toEqual('legendary');
+    });
 });

@@ -15,6 +15,7 @@ import {
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
 import { MarketboardItem } from './model/schema/market/marketboard-item';
 import { GCF_URL } from './xivapi-client.module';
+import { LoreSearchResult } from './model/lore-search-result';
 
 @Injectable()
 export class XivapiService {
@@ -37,6 +38,15 @@ export class XivapiService {
      */
     public get<T = any>(endpoint: XivapiEndpoint, id: number, options?: XivapiRequestOptions): Observable<T> {
         return this.request<T>(`/${endpoint}/${id}`, options);
+    }
+
+    /**
+     * Makes a request on a given endpoint with an id.
+     *
+     * @param query Text to search inside the lore.
+     */
+    public searchLore(query: string): Observable<LoreSearchResult> {
+        return this.doGet<LoreSearchResult>(`${XivapiService.API_BASE_URL}/lore`, new HttpParams().set('string', query));
     }
 
     /**
