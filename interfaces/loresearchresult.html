@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>XivapiClientModule | @xivapi/angular-client</title>
+	<title>LoreSearchResult | @xivapi/angular-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="xivapiclientmodule.html">XivapiClientModule</a>
+					<a href="loresearchresult.html">LoreSearchResult</a>
 				</li>
 			</ul>
-			<h1>Class XivapiClientModule</h1>
+			<h1>Interface LoreSearchResult</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">XivapiClientModule</span>
+						<span class="target">LoreSearchResult</span>
 					</li>
 				</ul>
 			</section>
@@ -79,38 +79,53 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="xivapiclientmodule.html#forroot" class="tsd-kind-icon">for<wbr>Root</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="loresearchresult.html#pagination" class="tsd-kind-icon">Pagination</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="loresearchresult.html#results" class="tsd-kind-icon">Results</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="forroot" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> for<wbr>Root</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Root<span class="tsd-signature-symbol">(</span>GCFUrl<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ModuleWithProviders</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/f8f9840/src/xivapi-client.module.ts#L18">xivapi-client.module.ts:18</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> GCFUrl: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ModuleWithProviders</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="pagination" class="tsd-anchor"></a>
+					<h3>Pagination</h3>
+					<div class="tsd-signature tsd-kind-icon">Pagination<span class="tsd-signature-symbol">:</span> <a href="pagination.html" class="tsd-signature-type">Pagination</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/f8f9840/src/model/lore-search-result.ts#L10">model/lore-search-result.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="results" class="tsd-anchor"></a>
+					<h3>Results</h3>
+					<div class="tsd-signature tsd-kind-icon">Results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/xivapi/angular-client/blob/f8f9840/src/model/lore-search-result.ts#L4">model/lore-search-result.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>Context<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>SourceID<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5>Text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -130,92 +145,95 @@
 					<li class=" tsd-kind-enum">
 						<a href="../enums/xivapiendpoint.html" class="tsd-kind-icon">Xivapi<wbr>Endpoint</a>
 					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/xivapiclientmodule.html" class="tsd-kind-icon">Xivapi<wbr>Client<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/xivapiservice.html" class="tsd-kind-icon">Xivapi<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="character.html" class="tsd-kind-icon">Character</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="characterresponse.html" class="tsd-kind-icon">Character<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="charactersearchresult.html" class="tsd-kind-icon">Character<wbr>Search<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="charactersearchresultrow.html" class="tsd-kind-icon">Character<wbr>Search<wbr>Result<wbr>Row</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="characterverification.html" class="tsd-kind-icon">Character<wbr>Verification</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="classjob.html" class="tsd-kind-icon">Class<wbr>Job</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="geardetails.html" class="tsd-kind-icon">Gear<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="gearpiece.html" class="tsd-kind-icon">Gear<wbr>Piece</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="gearset.html" class="tsd-kind-icon">Gear<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
+					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="xivapiclientmodule.html" class="tsd-kind-icon">Xivapi<wbr>Client<wbr>Module</a>
+					<li class="current tsd-kind-interface">
+						<a href="loresearchresult.html" class="tsd-kind-icon">Lore<wbr>Search<wbr>Result</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="xivapiclientmodule.html#forroot" class="tsd-kind-icon">for<wbr>Root</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="loresearchresult.html#pagination" class="tsd-kind-icon">Pagination</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="loresearchresult.html#results" class="tsd-kind-icon">Results</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="xivapiservice.html" class="tsd-kind-icon">Xivapi<wbr>Service</a>
+					<li class=" tsd-kind-interface">
+						<a href="marketboardhistory.html" class="tsd-kind-icon">Marketboard<wbr>History</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/character.html" class="tsd-kind-icon">Character</a>
+						<a href="marketboarditem.html" class="tsd-kind-icon">Marketboard<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/characterresponse.html" class="tsd-kind-icon">Character<wbr>Response</a>
+						<a href="marketboarditemhistory.html" class="tsd-kind-icon">Marketboard<wbr>Item<wbr>History</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/charactersearchresult.html" class="tsd-kind-icon">Character<wbr>Search<wbr>Result</a>
+						<a href="marketboardprice.html" class="tsd-kind-icon">Marketboard<wbr>Price</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/charactersearchresultrow.html" class="tsd-kind-icon">Character<wbr>Search<wbr>Result<wbr>Row</a>
+						<a href="pagination.html" class="tsd-kind-icon">Pagination</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/characterverification.html" class="tsd-kind-icon">Character<wbr>Verification</a>
+						<a href="pvpteam.html" class="tsd-kind-icon">Pvp<wbr>Team</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/classjob.html" class="tsd-kind-icon">Class<wbr>Job</a>
+						<a href="pvpteammember.html" class="tsd-kind-icon">Pvp<wbr>Team<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/geardetails.html" class="tsd-kind-icon">Gear<wbr>Details</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/gearpiece.html" class="tsd-kind-icon">Gear<wbr>Piece</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/gearset.html" class="tsd-kind-icon">Gear<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/grandcompany.html" class="tsd-kind-icon">Grand<wbr>Company</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/loresearchresult.html" class="tsd-kind-icon">Lore<wbr>Search<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/marketboardhistory.html" class="tsd-kind-icon">Marketboard<wbr>History</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/marketboarditem.html" class="tsd-kind-icon">Marketboard<wbr>Item</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/marketboarditemhistory.html" class="tsd-kind-icon">Marketboard<wbr>Item<wbr>History</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/marketboardprice.html" class="tsd-kind-icon">Marketboard<wbr>Price</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/pagination.html" class="tsd-kind-icon">Pagination</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/pvpteam.html" class="tsd-kind-icon">Pvp<wbr>Team</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/pvpteammember.html" class="tsd-kind-icon">Pvp<wbr>Team<wbr>Member</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapicharacteroptions.html" class="tsd-kind-icon">Xivapi<wbr>Character<wbr>Options</a>
+						<a href="xivapicharacteroptions.html" class="tsd-kind-icon">Xivapi<wbr>Character<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="../interfaces/xivapilist.html" class="tsd-kind-icon">Xivapi<wbr>List</a>
+						<a href="xivapilist.html" class="tsd-kind-icon">Xivapi<wbr>List</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapioptions.html" class="tsd-kind-icon">Xivapi<wbr>Options</a>
+						<a href="xivapioptions.html" class="tsd-kind-icon">Xivapi<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapirequestoptions.html" class="tsd-kind-icon">Xivapi<wbr>Request<wbr>Options</a>
+						<a href="xivapirequestoptions.html" class="tsd-kind-icon">Xivapi<wbr>Request<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapisearchfilter.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Filter</a>
+						<a href="xivapisearchfilter.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Filter</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="../interfaces/xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
+						<a href="xivapisearchoptions.html" class="tsd-kind-icon">Xivapi<wbr>Search<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#gcf_url" class="tsd-kind-icon">GCF_<wbr>URL</a>
