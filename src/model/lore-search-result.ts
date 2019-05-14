@@ -1,8 +1,8 @@
 import { Pagination } from './pagination';
 
 export interface LoreSearchResult {
-    Data?: any;
     Results: {
+        Data?: any;
         Context: string;
         Source: string;
         SourceID: number;
