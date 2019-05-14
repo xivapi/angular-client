@@ -44,12 +44,15 @@ export class XivapiService {
      * Makes a request on a given endpoint with an id.
      *
      * @param query Text to search inside the lore.
+     * @param lang
      * @param allLanguages should it include Text_*?
      * @param dataColumns Additional data you want to fetch.
      */
-    public searchLore(query: string, allLanguages: boolean = false, dataColumns: string[] = []): Observable<LoreSearchResult> {
+    public searchLore(query: string, lang: string = 'en', allLanguages: boolean = false,
+                      dataColumns: string[] = []): Observable<LoreSearchResult> {
         let httpParams: HttpParams = new HttpParams()
-            .set('string', query);
+            .set('string', query)
+            .set('language', lang);
         if (dataColumns && dataColumns.length > 0) {
             const columns: string[] = [
                 'Context',
