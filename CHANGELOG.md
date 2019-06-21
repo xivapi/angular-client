@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/xivapi/angular-client/compare/v1.2.4...v1.3.0) (2019-06-21)
+
+
+### Bug Fixes
+
+* **search:** added missing search indexes ([7120780](https://github.com/xivapi/angular-client/commit/7120780))
+
+
+### Features
+
+* **market:** added support for multiple items requests ([d8ac8a0](https://github.com/xivapi/angular-client/commit/d8ac8a0))
+
+
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/xivapi/angular-client/compare/v1.2.3...v1.2.4) (2019-05-14)
 
