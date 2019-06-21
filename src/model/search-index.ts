@@ -3,29 +3,37 @@
  */
 export enum SearchIndex {
     ACHIEVEMENT = 'achievement',
+    TITLE = 'title',
     ACTION = 'action',
+    CRAFT_ACTION = 'craftaction',
+    TRAIT = 'trait',
+    PVP_ACTION = 'PvPAction',
+    PVP_TRAIT = 'PvPTrait',
+    STATUS = 'status',
     /**
      * Enemies index.
      */
     BNPCNAME = 'bnpcname',
     /**
-     * Minions index.
-     */
-    COMPANION = 'companion',
-    /**
      * NPCs index.
      */
     ENPCRESIDENT = 'enpcresident',
+    /**
+     * Minions index.
+     */
+    COMPANION = 'companion',
+    MOUNT = 'mount',
+    LEVE = 'leve',
     EMOTE = 'emote',
-    FATE = 'fate',
     INSTANCECONTENT = 'instancecontent',
     ITEM = 'item',
-    LEVE = 'leve',
-    MOUNT = 'mount',
-    PLACENAME = 'placename',
-    QUEST = 'quest',
     RECIPE = 'recipe',
-    STATUS = 'status',
-    TITLE = 'title',
-    WEATHER = 'weather'
+    FATE = 'fate',
+    QUEST = 'quest',
+    BALLOON = 'balloon',
+    BUDDY_EQUIP = 'buddyequip',
+    ORCHESTRION = 'orchestrion',
+    PLACENAME = 'placename',
+    WEATHER = 'weather',
+    WORLD = 'world'
 }
