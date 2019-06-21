@@ -56,7 +56,7 @@ describe('Client tests', () => {
 
     it('Should search Lore properly with custom data columns', () => {
         const service: XivapiService = new XivapiService(httpClient);
-        service.searchLore('legendary', ['Icon']).subscribe();
+        service.searchLore('legendary', 'en', false, ['Icon']).subscribe();
         const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
             .find(row => row.request.url === `${XivapiService.API_BASE_URL}/lore`);
         expect(req).not.toBeUndefined();
