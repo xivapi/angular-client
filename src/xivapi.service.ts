@@ -274,6 +274,37 @@ export class XivapiService {
         return this.request<{ [index: string]: MarketboardItem }>(`/market/item/${itemId}`, options);
     }
 
+    /**
+     * Gets marketboard informations for a given item on multiple servers.
+     *
+     * @param servers
+     * @param itemIds The items you want informations on.
+     * @param options Options of the request.
+     */
+    public getMarketBoardItemsForServers(servers: string[],
+                                        itemIds: number[],
+                                        options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }[]> {
+        options.servers = servers;
+        options.extraQueryParams = options.extraQueryParams || {};
+        options.extraQueryParams['ids'] = itemIds.join(',');
+        return this.request<{ [index: string]: MarketboardItem[] }[]>(`/market/items`, options);
+    }
+
+    /**
+     * Gets marketboard informations for a given set of items.
+     *
+     * @param datacenter The datacenter to use for marketboard informations.
+     * @param itemIds The items you want informations on.
+     * @param options Options of the request.
+     */
+    public getMarketBoardItemsCrossServer(datacenter: string, itemIds: number[],
+                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }[]> {
+        options.extraQueryParams = options.extraQueryParams || {};
+        options.extraQueryParams['dc'] = datacenter;
+        options.extraQueryParams['ids'] = itemIds.join(',');
+        return this.request<{ [index: string]: MarketboardItem }[]>(`/market/items`, options);
+    }
+
     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         let queryParams: HttpParams = this.prepareQueryString(params);
         let baseUrl: string;
