@@ -88,7 +88,8 @@ export class XivapiService {
         let queryParams: HttpParams = this.prepareQueryString(options);
         if (options.filters) {
             const filterChain: string = options.filters.reduce((chain, filter) => {
-                return `${chain}${filter.column}${filter.operator}${filter.value},`;
+                const value: string = filter.value instanceof Array ? filter.value.join(';') : filter.value.toString();
+                return `${chain}${filter.column}${filter.operator}${value},`;
             }, '').slice(0, -1);
             queryParams = queryParams.set('filters', filterChain);
         }

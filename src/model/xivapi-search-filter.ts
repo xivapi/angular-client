@@ -1,5 +1,5 @@
 export interface XivapiSearchFilter {
     column: string;
     operator: '=' | '>' | '<' | '<=' | '>=' | '|=';
-    value: string | number;
+    value: string | number | string[] | number[];
 }
