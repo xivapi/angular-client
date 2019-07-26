@@ -47,12 +47,14 @@ export class XivapiService {
      * @param lang
      * @param allLanguages should it include Text_*?
      * @param dataColumns Additional data you want to fetch.
+     * @param page data page to get
      */
     public searchLore(query: string, lang: string = 'en', allLanguages: boolean = false,
-                      dataColumns: string[] = []): Observable<LoreSearchResult> {
+                      dataColumns: string[] = [], page: number = 1): Observable<LoreSearchResult> {
         let httpParams: HttpParams = new HttpParams()
             .set('string', query)
-            .set('language', lang);
+            .set('language', lang)
+            .set('page', page.toString());
         if (dataColumns && dataColumns.length > 0) {
             const columns: string[] = [
                 'Context',
@@ -283,8 +285,8 @@ export class XivapiService {
      * @param options Options of the request.
      */
     public getMarketBoardItemsForServers(servers: string[],
-                                        itemIds: number[],
-                                        options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }[]> {
+                                         itemIds: number[],
+                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }[]> {
         options.servers = servers;
         options.extraQueryParams = options.extraQueryParams || {};
         options.extraQueryParams['ids'] = itemIds.join(',');
@@ -299,7 +301,7 @@ export class XivapiService {
      * @param options Options of the request.
      */
     public getMarketBoardItemsCrossServer(datacenter: string, itemIds: number[],
-                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }[]> {
+                                          options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }[]> {
         options.extraQueryParams = options.extraQueryParams || {};
         options.extraQueryParams['dc'] = datacenter;
         options.extraQueryParams['ids'] = itemIds.join(',');
