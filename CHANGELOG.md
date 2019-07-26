@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/xivapi/angular-client/compare/v1.4.0...v1.4.1) (2019-07-26)
+
+
+### Bug Fixes
+
+* **lore:** proper implementation for page support in lore search ([0f5e7f1](https://github.com/xivapi/angular-client/commit/0f5e7f1))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/xivapi/angular-client/compare/v1.3.0...v1.4.0) (2019-07-20)
 
