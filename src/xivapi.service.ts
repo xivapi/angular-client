@@ -13,7 +13,6 @@ import {
     XivapiSearchOptions
 } from './model';
 import { CharacterResponse, CharacterVerification } from './model/schema/character';
-import { MarketboardItem } from './model/schema/market/marketboard-item';
 import { GCF_URL } from './xivapi-client.module';
 import { LoreSearchResult } from './model/lore-search-result';
 
@@ -238,77 +237,7 @@ export class XivapiService {
         return this.request<any>(`/PatchList`, options);
     }
 
-    /**
-     * Gets marketboard informations for a given item.
-     *
-     * @param server The server to use for marketboard informations.
-     * @param itemId The item you want informations on.
-     * @param options Options of the request.
-     */
-    public getMarketBoardItem(server: string, itemId: number, options?: XivapiOptions): Observable<MarketboardItem> {
-        return this.request<MarketboardItem>(`/market/${server}/item/${itemId}`, options);
-    }
-
-    /**
-     * Gets marketboard informations for a given item on multiple servers.
-     *
-     * @param servers
-     * @param itemId The item you want informations on.
-     * @param options Options of the request.
-     */
-    public getMarketBoardItemForServers(servers: string[],
-                                        itemId: number,
-                                        options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }> {
-        options.servers = servers;
-        return this.request<{ [index: string]: MarketboardItem[] }>(`/market/item/${itemId}`, options);
-    }
-
-    /**
-     * Gets marketboard informations for a given item.
-     *
-     * @param datacenter The datacenter to use for marketboard informations.
-     * @param itemId The item you want informations on.
-     * @param options Options of the request.
-     */
-    public getMarketBoardItemCrossServer(datacenter: string, itemId: number,
-                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }> {
-        options.extraQueryParams = options.extraQueryParams || {};
-        options.extraQueryParams['dc'] = datacenter;
-        return this.request<{ [index: string]: MarketboardItem }>(`/market/item/${itemId}`, options);
-    }
-
-    /**
-     * Gets marketboard informations for a given item on multiple servers.
-     *
-     * @param servers
-     * @param itemIds The items you want informations on.
-     * @param options Options of the request.
-     */
-    public getMarketBoardItemsForServers(servers: string[],
-                                         itemIds: number[],
-                                         options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem[] }[]> {
-        options.servers = servers;
-        options.extraQueryParams = options.extraQueryParams || {};
-        options.extraQueryParams['ids'] = itemIds.join(',');
-        return this.request<{ [index: string]: MarketboardItem[] }[]>(`/market/items`, options);
-    }
-
-    /**
-     * Gets marketboard informations for a given set of items.
-     *
-     * @param datacenter The datacenter to use for marketboard informations.
-     * @param itemIds The items you want informations on.
-     * @param options Options of the request.
-     */
-    public getMarketBoardItemsCrossServer(datacenter: string, itemIds: number[],
-                                          options: XivapiOptions = {}): Observable<{ [index: string]: MarketboardItem }[]> {
-        options.extraQueryParams = options.extraQueryParams || {};
-        options.extraQueryParams['dc'] = datacenter;
-        options.extraQueryParams['ids'] = itemIds.join(',');
-        return this.request<{ [index: string]: MarketboardItem }[]>(`/market/items`, options);
-    }
-
-    protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
+     protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         let queryParams: HttpParams = this.prepareQueryString(params);
         let baseUrl: string;
         if (params !== undefined) {
