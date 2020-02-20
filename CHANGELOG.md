@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/xivapi/angular-client/compare/v1.4.1...v1.5.0) (2020-02-20)
+
+
+### Code Refactoring
+
+* **market:** remove all instances of marketboard requests ([bd39473](https://github.com/xivapi/angular-client/commit/bd39473))
+
+
+### Features
+
+* **request:** support custom baseUrl ([6c0d8bc](https://github.com/xivapi/angular-client/commit/6c0d8bc))
+
+
+### BREAKING CHANGES
+
+* **market:** Marketboard API isn't available anymore.
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/xivapi/angular-client/compare/v1.4.0...v1.4.1) (2019-07-26)
 
