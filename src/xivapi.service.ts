@@ -239,7 +239,7 @@ export class XivapiService {
 
      protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         let queryParams: HttpParams = this.prepareQueryString(params);
-        let baseUrl = XivapiService.API_BASE_URL;
+        let baseUrl: string = XivapiService.API_BASE_URL;
         if (params) {
             if (params.baseUrl) {
                 baseUrl = params.baseUrl;
@@ -251,7 +251,7 @@ export class XivapiService {
                 if (params.hasOwnProperty(key)) {
                     queryParams.delete(key);
                 }
-            })
+            });
         }
         return this.doGet<any>(`${baseUrl}${endpoint}`, queryParams);
     }
