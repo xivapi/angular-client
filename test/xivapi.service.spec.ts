@@ -64,4 +64,25 @@ describe('Client tests', () => {
         expect(req.request.params.get('string')).toEqual('legendary');
         expect(req.request.params.get('columns')).toEqual('Context,Source,SourceID,Text,Data.Icon');
     });
+
+    it('Should use custom baseUrl when `baseUrl` is provided', () => {
+        const service: XivapiService = new XivapiService(httpClient);
+        service.get(XivapiEndpoint.Item, 12087, {
+            baseUrl: 'https://example.org'
+        }).subscribe();
+        const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
+            .find(row => row.request.url === 'https://example.org/Item/12087');
+        expect(req).not.toBeUndefined();
+    });
+
+    it('Should use custom baseUrl when both baseUrl and staging are provided', () => {
+        const service: XivapiService = new XivapiService(httpClient);
+        service.get(XivapiEndpoint.Item, 12087, {
+            baseUrl: 'https://example.org',
+            staging: true
+        }).subscribe();
+        const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
+            .find(row => row.request.url === 'https://example.org/Item/12087');
+        expect(req).not.toBeUndefined();
+    });
 });

@@ -44,6 +44,11 @@ export interface XivapiOptions {
     staging?: boolean;
 
     /**
+     * A custom xivapi instance to request instead of `xivapi.com`. This is prior to `staging`.
+     */
+    baseUrl?: string;
+
+    /**
      * Servers for the market endpoint.
      */
     servers?: string[];
