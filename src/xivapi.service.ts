@@ -239,14 +239,19 @@ export class XivapiService {
 
      protected request<T>(endpoint: string, params?: XivapiOptions): Observable<T> {
         let queryParams: HttpParams = this.prepareQueryString(params);
-        let baseUrl: string;
-        if (params !== undefined) {
-            baseUrl = params.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
-            if (params.staging) {
-                queryParams = queryParams.delete('staging');
+        let baseUrl = XivapiService.API_BASE_URL;
+        if (params) {
+            if (params.baseUrl) {
+                baseUrl = params.baseUrl;
+            } else if (params.staging) {
+                baseUrl = XivapiService.STAGING_API_BASE_URL;
             }
-        } else {
-            baseUrl = XivapiService.API_BASE_URL;
+
+            ['staging', 'baseUrl'].forEach(key => {
+                if (params.hasOwnProperty(key)) {
+                    queryParams.delete(key);
+                }
+            })
         }
         return this.doGet<any>(`${baseUrl}${endpoint}`, queryParams);
     }
