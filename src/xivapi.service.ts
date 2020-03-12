@@ -86,19 +86,19 @@ export class XivapiService {
      * @param options Search options, see http://xivapi.com/docs/Search for more details.
      */
     public search(options: XivapiSearchOptions): Observable<any> {
-        let queryParams: HttpParams = this.prepareQueryString(options);
         if (options.filters) {
             const filterChain: string = options.filters.reduce((chain, filter) => {
                 const value: string = filter.value instanceof Array ? filter.value.join(';') : filter.value.toString();
                 return `${chain}${filter.column}${filter.operator}${value},`;
             }, '').slice(0, -1);
-            queryParams = queryParams.set('filters', filterChain);
+
+            if (!options.extraQueryParams) {
+                options.extraQueryParams = {};
+            }
+            options.extraQueryParams.filters = filterChain;
         }
-        const baseUrl: string = options.staging ? XivapiService.STAGING_API_BASE_URL : XivapiService.API_BASE_URL;
-        if (options.staging) {
-            queryParams = queryParams.delete('staging');
-        }
-        return this.doGet<any>(`${baseUrl}/Search`, queryParams);
+
+        return this.request<any>('/Search', options);
     }
 
     /**
@@ -261,9 +261,14 @@ export class XivapiService {
         if (options === null || options === undefined) {
             return queryString;
         }
-        Object.keys(options)
-            .filter(key => key !== 'extraQueryParams')
+
+        const { extraQueryParams, ...rest } = options;
+        Object.keys(rest)
             .forEach(optionKey => {
+                if (extraQueryParams && Object.prototype.hasOwnProperty.call(extraQueryParams, optionKey)) {
+                    return;
+                }
+
                 // @ts-ignore
                 const value: any = options[optionKey] as any;
                 if (value instanceof Array) {
@@ -272,11 +277,11 @@ export class XivapiService {
                     queryString = queryString.set(optionKey, value.toString());
                 }
             });
-        if (options.extraQueryParams !== undefined) {
-            Object.keys(options.extraQueryParams)
+        if (extraQueryParams) {
+            Object.keys(extraQueryParams)
                 .forEach(key => {
                     // @ts-ignore
-                    queryString = queryString.set(key, options.extraQueryParams[key].toString());
+                    queryString = queryString.set(key, extraQueryParams[key].toString());
                 });
         }
         return queryString;
