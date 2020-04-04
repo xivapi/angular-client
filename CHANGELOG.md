@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/xivapi/angular-client/compare/v1.5.2...v1.6.0) (2020-04-04)
+
+
+### Features
+
+* **searchLore:** support baseUrl ([4807286](https://github.com/xivapi/angular-client/commit/4807286))
+
+
+
 <a name="1.5.2"></a>
 ## [1.5.2](https://github.com/xivapi/angular-client/compare/v1.5.1...v1.5.2) (2020-03-12)
 
