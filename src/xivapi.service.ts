@@ -47,13 +47,20 @@ export class XivapiService {
      * @param allLanguages should it include Text_*?
      * @param dataColumns Additional data you want to fetch.
      * @param page data page to get
+     * @param options Options of the request.
      */
     public searchLore(query: string, lang: string = 'en', allLanguages: boolean = false,
-                      dataColumns: string[] = [], page: number = 1): Observable<LoreSearchResult> {
-        let httpParams: HttpParams = new HttpParams()
-            .set('string', query)
-            .set('language', lang)
-            .set('page', page.toString());
+                      dataColumns: string[] = [], page: number = 1, options: XivapiOptions = {}): Observable<LoreSearchResult> {
+        if (!options.extraQueryParams) {
+            options.extraQueryParams = {};
+        }
+
+        Object.assign(options.extraQueryParams, {
+            string: query,
+            language: lang,
+            page: page.toString()
+        });
+
         if (dataColumns && dataColumns.length > 0) {
             const columns: string[] = [
                 'Context',
@@ -65,9 +72,10 @@ export class XivapiService {
             if (allLanguages) {
                 columns.push('Text_*');
             }
-            httpParams = httpParams.set('columns', columns.join(','));
+
+            options.extraQueryParams.columns = columns.join(',');
         }
-        return this.doGet<LoreSearchResult>(`${XivapiService.API_BASE_URL}/lore`, httpParams);
+        return this.request<LoreSearchResult>('/lore', options);
     }
 
     /**
