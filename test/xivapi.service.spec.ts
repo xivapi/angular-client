@@ -85,4 +85,16 @@ describe('Client tests', () => {
             .find(row => row.request.url === 'https://example.org/Item/12087');
         expect(req).not.toBeUndefined();
     });
+
+    it('Should search Lore with custom baseUrl', () => {
+        const service: XivapiService = new XivapiService(httpClient);
+        service.searchLore('legendary', 'en', false, [], 1, {
+            baseUrl: 'https://example.org',
+        }).subscribe();
+        const req: TestRequest = <TestRequest>httpMock.match({method: 'GET'})
+            .find(row => row.request.url === 'https://example.org/lore');
+        expect(req).not.toBeUndefined();
+        expect(req.request.params.has('string')).toBeTruthy();
+        expect(req.request.params.get('string')).toEqual('legendary');
+    });
 });
