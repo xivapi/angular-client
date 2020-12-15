@@ -272,6 +272,7 @@ export enum XivapiEndpoint {
     MapMarker = 'MapMarker',
     MapMarkerRegion = 'MapMarkerRegion',
     MapSymbol = 'MapSymbol',
+    MappyMapData = 'mappy/map',
     Marker = 'Marker',
     MasterpieceSupplyDuty = 'MasterpieceSupplyDuty',
     MasterpieceSupplyMultiplier = 'MasterpieceSupplyMultiplier',
