@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/xivapi/angular-client/compare/v1.6.0...v1.7.0) (2020-12-30)
+
+
+### Features
+
+* **endpoint:** added mappy/map endpoint ([94ac369](https://github.com/xivapi/angular-client/commit/94ac369))
+* **search:** support for field exclusion ([15c0a69](https://github.com/xivapi/angular-client/commit/15c0a69))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/xivapi/angular-client/compare/v1.5.2...v1.6.0) (2020-04-04)
 
