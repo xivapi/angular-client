@@ -40,6 +40,11 @@ export interface XivapiSearchOptions extends XivapiOptions {
     page?: number;
 
     /**
+     * Exclude dated items
+     */
+    exclude_dated?: 1;
+
+    /**
      * The column to sort the results by.
      */
     sort_field?: string;

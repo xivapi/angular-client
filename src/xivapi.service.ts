@@ -96,7 +96,7 @@ export class XivapiService {
     public search(options: XivapiSearchOptions): Observable<any> {
         if (options.filters) {
             const filterChain: string = options.filters.reduce((chain, filter) => {
-                const value: string = filter.value instanceof Array ? filter.value.join(';') : filter.value.toString();
+                const value: string = filter.value instanceof Array ? filter.value.join(';') : (filter.value || '').toString();
                 return `${chain}${filter.column}${filter.operator}${value},`;
             }, '').slice(0, -1);
 
