@@ -8,5 +8,6 @@ export enum SearchAlgo {
     QUERY_STRING = 'query_string',
     TERM = 'term',
     MATCH_PHRASE_PREFIX = 'match_phrase_prefix',
-    FUZZ = 'fuzz'
+    FUZZ = 'fuzzy',
+    STRING_CUSTOM = 'custom'
 }
