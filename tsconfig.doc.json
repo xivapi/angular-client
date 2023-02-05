@@ -1,8 +1,9 @@
 {
   "include": [
-    "src/**/*.ts"
+    "projects/angular-client/src/**/*.ts"
   ],
   "exclude": [
-    "src/**/*.spec.ts"
+    "projects/angular-client/src/*.spec.ts",
+    "projects/angular-client/src/test.ts",
   ]
 }
