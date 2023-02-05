@@ -1,6 +1,17 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.1.0](https://github.com/xivapi/angular-client/compare/v1.8.1...v0.1.0) (2023-02-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **core:** this will most likely not work anymore on Angular < 10
+
+### Features
+
+* **core:** migrate library to Ivy w/ ng-packagr ([e88f7e6](https://github.com/xivapi/angular-client/commit/e88f7e6a41d068b2c0b87858032c1f251c72cc46))
 
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/xivapi/angular-client/compare/v1.8.0...v1.8.1) (2021-04-12)
