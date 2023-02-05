@@ -31,71 +31,23 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="angular-client">angular-client</h1>
-<p><a href="https://circleci.com/gh/xivapi/angular-client/tree/master"><img src="https://circleci.com/gh/xivapi/angular-client/tree/master.svg?style=shield" alt="CircleCI" class="img-responsive"></a>
-<a href="https://www.npmjs.com/package/@xivapi/angular-client"><img src="https://badge.fury.io/js/%40xivapi%2Fangular-client.svg" alt="npm version" class="img-responsive"></a></p>
-<h2 id="documentation">Documentation</h2>
-<p>Visit <a href="https://xivapi.com/docs">https://xivapi.com/docs</a> for documentation about the web api mapped by this client.</p>
-<p>Further documentation for this library available on documentation website: <a href="https://xivapi.github.io/angular-client/">https://xivapi.github.io/angular-client/</a></p>
-<h2 id="installation">Installation</h2>
-<p>Simply run <code>npm i --save @xivapi/angular-client</code></p>
-<h2 id="quick-start">Quick start</h2>
-<p>Add <code>XivapiClientModule</code> to your <code>AppModule</code> imports:</p>
-<div><pre class="line-numbers"><code class="language-ts">&#64;NgModule({
-    declarations: [
-        AppComponent,
-    ],
-    imports: [
-        ...
-        XivapiClientModule.forRoot(),        
-        ...
-    ],
-    bootstrap: [AppComponent]
-})
-export class AppModule {
-}</code></pre></div><p>In the other modules, don&#39;t call <code>forRoot</code> again, just import the module itself.</p>
-<p>Then you can simply inject the service wherever you want to use it:</p>
-<div><pre class="line-numbers"><code class="language-ts">&#64;Component({
-    ...
-})
-export class FooComponent {
-    
-    public items$: Observable&lt;XivapiList&lt;any&gt;&gt;;
-    
-    constructor(private xivapi: XivapiService){
-        this.items$ = this.xivapi.getList(XivapiEndpoint.Items);
-    }
-}</code></pre></div><h2 id="use-with-private_key-google-cloud-function">Use with private_key (Google Cloud Function)</h2>
-<ul>
-<li>Create a google cloud function, name it as you want.</li>
-<li>Insert following code (with your key):</li>
-</ul>
-<div><pre class="line-numbers"><code class="language-js">exports.xivapiProxy = (req, res) =&gt; {
-  let request = require(&#39;request&#39;);
-  const apiKey = &#39;&lt;your api key&gt;&gt;&#39;;
-  res.set(&#39;Access-Control-Allow-Origin&#39;, &#39;&lt;your allowed origins&gt;&#39;)
-     .set(&#39;Access-Control-Allow-Headers&#39;, &#39;Content-Type&#39;);
-  const url = Buffer.from(req.query.url, &#39;base64&#39;).toString();
-  request(
-    {
-      url:`${url}${url.indexOf(&#39;?&#39;) &gt; -1 ? &#39;&amp;&#39;:&#39;?&#39;}private_key=${apiKey}`,
-    }, 
-    function(error, response, body) {
-    let errorBody = JSON.parse(body);
-    let errorMessage = errorBody.error || errorBody.message;
-    if (error || errorMessage) {
-      res.status(400).send(errorMessage || &#39;Unknown Error&#39;);
-    } else {
-      res.status(200).set(&#39;Content-Type&#39;, &#39;application/json&#39;).send(body);
-    }
-  });
-};</code></pre></div><ul>
-<li>Enable proxy mode inside the api module:</li>
-</ul>
-<div><pre class="line-numbers"><code class="language-ts">   XivapiClientModule.forRoot(&#39;&lt;GCF trigger url&gt;&#39;)</code></pre></div><p>Example url: <a href="https://us-central1-myproject.cloudfunctions.net/xivapi-proxy">https://us-central1-myproject.cloudfunctions.net/xivapi-proxy</a></p>
-<p>Keep in mind that you can enable it based on the current environment, simply give <code>null</code> as proxy url if environment isn&#39;t prod,
-to use &quot;normal&quot; mode in order to get better debugging
-when using dev environment.</p>
+<p>MIT License</p>
+<p>Copyright (c) 2023 XIVAPI</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
 
 
 
@@ -143,7 +95,7 @@ when using dev environment.</p>
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
-            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'license.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -1,0 +1,439 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@xivapi/angular-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">@xivapi/angular-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<h2 id="200-2023-02-05"><a href="https://github.com/xivapi/angular-client/compare/v1.8.1...v2.0.0">2.0.0</a> (2023-02-05)</h2>
+<h3 id="⚠-breaking-changes">⚠ BREAKING CHANGES</h3>
+<ul>
+<li><strong>core:</strong> this will most likely not work anymore on Angular &lt; 10</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>core:</strong> migrate library to Ivy w/ ng-packagr (<a href="https://github.com/xivapi/angular-client/commit/e88f7e6a41d068b2c0b87858032c1f251c72cc46">e88f7e6</a>)</li>
+</ul>
+<p><a name="1.8.1"></a></p>
+<h2 id="181-2021-04-12"><a href="https://github.com/xivapi/angular-client/compare/v1.8.0...v1.8.1">1.8.1</a> (2021-04-12)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>search:</strong> updated SearchAlgo enum (<a href="https://github.com/xivapi/angular-client/commit/d5f7fb3">d5f7fb3</a>)</li>
+</ul>
+<p><a name="1.8.0"></a></p>
+<h1 id="180-2021-01-03"><a href="https://github.com/xivapi/angular-client/compare/v1.7.1...v1.8.0">1.8.0</a> (2021-01-03)</h1>
+<h3 id="features-1">Features</h3>
+<ul>
+<li><strong>search:</strong> support for exclude_dated parameter (<a href="https://github.com/xivapi/angular-client/commit/faafa98">faafa98</a>)</li>
+</ul>
+<p><a name="1.7.1"></a></p>
+<h2 id="171-2020-12-30"><a href="https://github.com/xivapi/angular-client/compare/v1.7.0...v1.7.1">1.7.1</a> (2020-12-30)</h2>
+<p><a name="1.7.0"></a></p>
+<h1 id="170-2020-12-30"><a href="https://github.com/xivapi/angular-client/compare/v1.6.0...v1.7.0">1.7.0</a> (2020-12-30)</h1>
+<h3 id="features-2">Features</h3>
+<ul>
+<li><strong>endpoint:</strong> added mappy/map endpoint (<a href="https://github.com/xivapi/angular-client/commit/94ac369">94ac369</a>)</li>
+<li><strong>search:</strong> support for field exclusion (<a href="https://github.com/xivapi/angular-client/commit/15c0a69">15c0a69</a>)</li>
+</ul>
+<p><a name="1.6.0"></a></p>
+<h1 id="160-2020-04-04"><a href="https://github.com/xivapi/angular-client/compare/v1.5.2...v1.6.0">1.6.0</a> (2020-04-04)</h1>
+<h3 id="features-3">Features</h3>
+<ul>
+<li><strong>searchLore:</strong> support baseUrl (<a href="https://github.com/xivapi/angular-client/commit/4807286">4807286</a>)</li>
+</ul>
+<p><a name="1.5.2"></a></p>
+<h2 id="152-2020-03-12"><a href="https://github.com/xivapi/angular-client/compare/v1.5.1...v1.5.2">1.5.2</a> (2020-03-12)</h2>
+<h3 id="bug-fixes-1">Bug Fixes</h3>
+<ul>
+<li><strong>search:</strong> fix custom baseUrl not working on search (<a href="https://github.com/xivapi/angular-client/commit/486ba2f">486ba2f</a>)</li>
+</ul>
+<p><a name="1.5.1"></a></p>
+<h2 id="151-2020-02-20"><a href="https://github.com/xivapi/angular-client/compare/v1.5.0...v1.5.1">1.5.1</a> (2020-02-20)</h2>
+<p><a name="1.5.0"></a></p>
+<h1 id="150-2020-02-20"><a href="https://github.com/xivapi/angular-client/compare/v1.4.1...v1.5.0">1.5.0</a> (2020-02-20)</h1>
+<h3 id="code-refactoring">Code Refactoring</h3>
+<ul>
+<li><strong>market:</strong> remove all instances of marketboard requests (<a href="https://github.com/xivapi/angular-client/commit/bd39473">bd39473</a>)</li>
+</ul>
+<h3 id="features-4">Features</h3>
+<ul>
+<li><strong>request:</strong> support custom baseUrl (<a href="https://github.com/xivapi/angular-client/commit/6c0d8bc">6c0d8bc</a>)</li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li><strong>market:</strong> Marketboard API isn&#39;t available anymore.</li>
+</ul>
+<p><a name="1.4.1"></a></p>
+<h2 id="141-2019-07-26"><a href="https://github.com/xivapi/angular-client/compare/v1.4.0...v1.4.1">1.4.1</a> (2019-07-26)</h2>
+<h3 id="bug-fixes-2">Bug Fixes</h3>
+<ul>
+<li><strong>lore:</strong> proper implementation for page support in lore search (<a href="https://github.com/xivapi/angular-client/commit/0f5e7f1">0f5e7f1</a>)</li>
+</ul>
+<p><a name="1.4.0"></a></p>
+<h1 id="140-2019-07-20"><a href="https://github.com/xivapi/angular-client/compare/v1.3.0...v1.4.0">1.4.0</a> (2019-07-20)</h1>
+<h3 id="features-5">Features</h3>
+<ul>
+<li><strong>search:</strong> added support for |= search operator (<a href="https://github.com/xivapi/angular-client/commit/33f0117">33f0117</a>)</li>
+</ul>
+<p><a name="1.3.0"></a></p>
+<h1 id="130-2019-06-21"><a href="https://github.com/xivapi/angular-client/compare/v1.2.4...v1.3.0">1.3.0</a> (2019-06-21)</h1>
+<h3 id="bug-fixes-3">Bug Fixes</h3>
+<ul>
+<li><strong>search:</strong> added missing search indexes (<a href="https://github.com/xivapi/angular-client/commit/7120780">7120780</a>)</li>
+</ul>
+<h3 id="features-6">Features</h3>
+<ul>
+<li><strong>market:</strong> added support for multiple items requests (<a href="https://github.com/xivapi/angular-client/commit/d8ac8a0">d8ac8a0</a>)</li>
+</ul>
+<p><a name="1.2.4"></a></p>
+<h2 id="124-2019-05-14"><a href="https://github.com/xivapi/angular-client/compare/v1.2.3...v1.2.4">1.2.4</a> (2019-05-14)</h2>
+<h3 id="bug-fixes-4">Bug Fixes</h3>
+<ul>
+<li><strong>lore:</strong> added language switch support (<a href="https://github.com/xivapi/angular-client/commit/317357c">317357c</a>)</li>
+</ul>
+<p><a name="1.2.3"></a></p>
+<h2 id="123-2019-05-14"><a href="https://github.com/xivapi/angular-client/compare/v1.2.2...v1.2.3">1.2.3</a> (2019-05-14)</h2>
+<h3 id="bug-fixes-5">Bug Fixes</h3>
+<ul>
+<li>fixed a wrong model interface for lore search (<a href="https://github.com/xivapi/angular-client/commit/1d54056">1d54056</a>)</li>
+</ul>
+<p><a name="1.2.2"></a></p>
+<h2 id="122-2019-05-13"><a href="https://github.com/xivapi/angular-client/compare/v1.2.1...v1.2.2">1.2.2</a> (2019-05-13)</h2>
+<h3 id="bug-fixes-6">Bug Fixes</h3>
+<ul>
+<li><strong>lore:</strong> better support for localized queries (<a href="https://github.com/xivapi/angular-client/commit/95f5fcf">95f5fcf</a>)</li>
+</ul>
+<p><a name="1.2.1"></a></p>
+<h2 id="121-2019-05-13"><a href="https://github.com/xivapi/angular-client/compare/v1.2.0...v1.2.1">1.2.1</a> (2019-05-13)</h2>
+<h3 id="bug-fixes-7">Bug Fixes</h3>
+<ul>
+<li><strong>lore:</strong> better support for additional lore data (<a href="https://github.com/xivapi/angular-client/commit/a5b18a1">a5b18a1</a>)</li>
+</ul>
+<p><a name="1.2.0"></a></p>
+<h1 id="120-2019-05-13"><a href="https://github.com/xivapi/angular-client/compare/v1.1.1...v1.2.0">1.2.0</a> (2019-05-13)</h1>
+<h3 id="features-7">Features</h3>
+<ul>
+<li>added support for lore search (<a href="https://github.com/xivapi/angular-client/commit/f8f9840">f8f9840</a>)</li>
+</ul>
+<p><a name="1.1.1"></a></p>
+<h2 id="111-2019-04-25"><a href="https://github.com/xivapi/angular-client/compare/v1.1.0...v1.1.1">1.1.1</a> (2019-04-25)</h2>
+<h3 id="bug-fixes-8">Bug Fixes</h3>
+<ul>
+<li><strong>marketboard:</strong> fixed wrong path for cross server requests (<a href="https://github.com/xivapi/angular-client/commit/be7654c">be7654c</a>)</li>
+</ul>
+<p><a name="1.1.0"></a></p>
+<h1 id="110-2019-04-25"><a href="https://github.com/xivapi/angular-client/compare/v1.0.2...v1.1.0">1.1.0</a> (2019-04-25)</h1>
+<h3 id="features-8">Features</h3>
+<ul>
+<li><strong>marketboard:</strong> add support for datacenter price requests (<a href="https://github.com/xivapi/angular-client/commit/0e3aba3">0e3aba3</a>)</li>
+</ul>
+<p><a name="1.0.2"></a></p>
+<h2 id="102-2019-03-31"><a href="https://github.com/xivapi/angular-client/compare/v1.0.1...v1.0.2">1.0.2</a> (2019-03-31)</h2>
+<p><a name="1.0.1"></a></p>
+<h2 id="101-2019-03-30"><a href="https://github.com/xivapi/angular-client/compare/v1.0.0...v1.0.1">1.0.1</a> (2019-03-30)</h2>
+<h3 id="bug-fixes-9">Bug Fixes</h3>
+<ul>
+<li><strong>core:</strong> GCFUrl is now properly optional (<a href="https://github.com/xivapi/angular-client/commit/b7e9627">b7e9627</a>)</li>
+<li><strong>search:</strong> fixed an issue with search when not using GCF (<a href="https://github.com/xivapi/angular-client/commit/9526b23">9526b23</a>)</li>
+</ul>
+<p><a name="1.0.0"></a></p>
+<h1 id="100-2019-03-27"><a href="https://github.com/xivapi/angular-client/compare/v0.10.6...v1.0.0">1.0.0</a> (2019-03-27)</h1>
+<h3 id="code-refactoring-1">Code Refactoring</h3>
+<ul>
+<li>changed the way we handle api key and added a proxy mode (<a href="https://github.com/xivapi/angular-client/commit/5a28752">5a28752</a>)</li>
+</ul>
+<h3 id="breaking-changes-1">BREAKING CHANGES</h3>
+<ul>
+<li>You have to remove your api key from the <code>forRoot</code> call and use proxy url if you want to use one.</li>
+</ul>
+<p><a name="0.10.7"></a></p>
+<h2 id="0107-2019-03-27"><a href="https://github.com/xivapi/angular-client/compare/v0.10.6...v0.10.7">0.10.7</a> (2019-03-27)</h2>
+<h3 id="code-refactoring-2">Code Refactoring</h3>
+<ul>
+<li>changed the way we handle api key and added a proxy mode (<a href="https://github.com/xivapi/angular-client/commit/a1d6843">a1d6843</a>)</li>
+</ul>
+<h3 id="breaking-changes-2">BREAKING CHANGES</h3>
+<ul>
+<li>You have to remove your api key from the <code>forRoot</code> call and use proxy url if you want to use one.</li>
+</ul>
+<p><a name="0.10.6"></a></p>
+<h2 id="0106-2018-12-23"><a href="https://github.com/xivapi/angular-client/compare/v0.10.4...v0.10.6">0.10.6</a> (2018-12-23)</h2>
+<p><a name="0.10.4"></a></p>
+<h2 id="0104-2018-12-23"><a href="https://github.com/xivapi/angular-client/compare/v0.10.3...v0.10.4">0.10.4</a> (2018-12-23)</h2>
+<p><a name="0.10.3"></a></p>
+<h2 id="0103-2018-12-23"><a href="https://github.com/xivapi/angular-client/compare/v0.10.2...v0.10.3">0.10.3</a> (2018-12-23)</h2>
+<h3 id="bug-fixes-10">Bug Fixes</h3>
+<ul>
+<li>implemented timer to avoid hitting api limit (<a href="https://github.com/xivapi/angular-client/commit/860ac04">860ac04</a>)</li>
+</ul>
+<p><a name="0.10.2"></a></p>
+<h2 id="0102-2018-11-23"><a href="https://github.com/xivapi/angular-client/compare/v0.10.1...v0.10.2">0.10.2</a> (2018-11-23)</h2>
+<h3 id="bug-fixes-11">Bug Fixes</h3>
+<ul>
+<li>renamed extend parameter to extended in character options (<a href="https://github.com/xivapi/angular-client/commit/581e03b">581e03b</a>)</li>
+</ul>
+<p><a name="0.10.1"></a></p>
+<h2 id="0101-2018-11-20"><a href="https://github.com/xivapi/angular-client/compare/v0.10.0...v0.10.1">0.10.1</a> (2018-11-20)</h2>
+<h3 id="bug-fixes-12">Bug Fixes</h3>
+<ul>
+<li>fixed character endpoint to lowercase for a proper verification support (<a href="https://github.com/xivapi/angular-client/commit/558a018">558a018</a>)</li>
+</ul>
+<p><a name="0.10.0"></a></p>
+<h1 id="0100-2018-11-20"><a href="https://github.com/xivapi/angular-client/compare/v0.9.0...v0.10.0">0.10.0</a> (2018-11-20)</h1>
+<h3 id="features-9">Features</h3>
+<ul>
+<li>character verification support (<a href="https://github.com/xivapi/angular-client/commit/a25a4cf">a25a4cf</a>)</li>
+</ul>
+<p><a name="0.9.0"></a></p>
+<h1 id="090-2018-11-09"><a href="https://github.com/xivapi/angular-client/compare/v0.8.0...v0.9.0">0.9.0</a> (2018-11-09)</h1>
+<h3 id="features-10">Features</h3>
+<ul>
+<li>support for marketboard api (<a href="https://github.com/xivapi/angular-client/commit/bedaaac">bedaaac</a>)</li>
+</ul>
+<p><a name="0.8.0"></a></p>
+<h1 id="080-2018-10-17"><a href="https://github.com/xivapi/angular-client/compare/v0.7.3...v0.8.0">0.8.0</a> (2018-10-17)</h1>
+<h3 id="bug-fixes-13">Bug Fixes</h3>
+<ul>
+<li>fixed an issue adding staging to query params when querying the staging env (<a href="https://github.com/xivapi/angular-client/commit/155ad98">155ad98</a>)</li>
+</ul>
+<h3 id="features-11">Features</h3>
+<ul>
+<li>implemented free company search (<a href="https://github.com/xivapi/angular-client/commit/77fcd1b">77fcd1b</a>)</li>
+</ul>
+<p><a name="0.7.3"></a></p>
+<h2 id="073-2018-10-16"><a href="https://github.com/xivapi/angular-client/compare/v0.7.2...v0.7.3">0.7.3</a> (2018-10-16)</h2>
+<h3 id="bug-fixes-14">Bug Fixes</h3>
+<ul>
+<li>support for string type in lodestoneIds for long ids (Free company mainly) (<a href="https://github.com/xivapi/angular-client/commit/88a1c4e">88a1c4e</a>)</li>
+</ul>
+<p><a name="0.7.2"></a></p>
+<h2 id="072-2018-10-16"><a href="https://github.com/xivapi/angular-client/compare/v0.7.1...v0.7.2">0.7.2</a> (2018-10-16)</h2>
+<h3 id="bug-fixes-15">Bug Fixes</h3>
+<ul>
+<li>fixed case on list model (<a href="https://github.com/xivapi/angular-client/commit/ae078cb">ae078cb</a>)</li>
+</ul>
+<p><a name="0.7.1"></a></p>
+<h2 id="071-2018-10-08"><a href="https://github.com/xivapi/angular-client/compare/v0.7.0...v0.7.1">0.7.1</a> (2018-10-08)</h2>
+<h3 id="bug-fixes-16">Bug Fixes</h3>
+<ul>
+<li>fixed an issue with Search endpoint being wrong (<a href="https://github.com/xivapi/angular-client/commit/e1f39f7">e1f39f7</a>)</li>
+</ul>
+<p><a name="0.7.0"></a></p>
+<h1 id="070-2018-10-08"><a href="https://github.com/xivapi/angular-client/compare/v0.6.7...v0.7.0">0.7.0</a> (2018-10-08)</h1>
+<h3 id="features-12">Features</h3>
+<ul>
+<li>added support for staging requests via request options (<a href="https://github.com/xivapi/angular-client/commit/d8a7184">d8a7184</a>)</li>
+</ul>
+<p><a name="0.6.7"></a></p>
+<h2 id="067-2018-09-25"><a href="https://github.com/xivapi/angular-client/compare/v0.6.6...v0.6.7">0.6.7</a> (2018-09-25)</h2>
+<h3 id="bug-fixes-17">Bug Fixes</h3>
+<ul>
+<li>fixed an issue with aot compilation and service factory (<a href="https://github.com/xivapi/angular-client/commit/10df2ad">10df2ad</a>)</li>
+</ul>
+<p><a name="0.6.6"></a></p>
+<h2 id="066-2018-09-25"><a href="https://github.com/xivapi/angular-client/compare/v0.6.5...v0.6.6">0.6.6</a> (2018-09-25)</h2>
+<h3 id="bug-fixes-18">Bug Fixes</h3>
+<ul>
+<li>fixed aot error with forRoot method (<a href="https://github.com/xivapi/angular-client/commit/f251299">f251299</a>)</li>
+</ul>
+<p><a name="0.6.5"></a></p>
+<h2 id="065-2018-09-15"><a href="https://github.com/xivapi/angular-client/compare/v0.6.4...v0.6.5">0.6.5</a> (2018-09-15)</h2>
+<h3 id="bug-fixes-19">Bug Fixes</h3>
+<ul>
+<li>fix missing search options (<a href="https://github.com/xivapi/angular-client/commit/a902fda">a902fda</a>), closes <a href="https://github.com/xivapi/angular-client/issues/3">#3</a></li>
+</ul>
+<p><a name="0.6.4"></a></p>
+<h2 id="064-2018-09-14"><a href="https://github.com/xivapi/angular-client/compare/v0.6.3...v0.6.4">0.6.4</a> (2018-09-14)</h2>
+<h3 id="bug-fixes-20">Bug Fixes</h3>
+<ul>
+<li>changed search filters to use comma-chaining instead of URL params chaining (<a href="https://github.com/xivapi/angular-client/commit/4584b97">4584b97</a>), closes <a href="https://github.com/xivapi/angular-client/issues/2">#2</a></li>
+</ul>
+<p><a name="0.6.3"></a></p>
+<h2 id="063-2018-09-14"><a href="https://github.com/xivapi/angular-client/compare/v0.6.2...v0.6.3">0.6.3</a> (2018-09-14)</h2>
+<h3 id="bug-fixes-21">Bug Fixes</h3>
+<ul>
+<li>fixed search method and added proper tests for it (<a href="https://github.com/xivapi/angular-client/commit/4314791">4314791</a>)</li>
+</ul>
+<p><a name="0.6.2"></a></p>
+<h2 id="062-2018-09-13"><a href="https://github.com/xivapi/angular-client/compare/v0.6.1...v0.6.2">0.6.2</a> (2018-09-13)</h2>
+<h3 id="bug-fixes-22">Bug Fixes</h3>
+<ul>
+<li>fixed an issue with search options not being passed to query (<a href="https://github.com/xivapi/angular-client/commit/66e3851">66e3851</a>)</li>
+</ul>
+<p><a name="0.6.1"></a></p>
+<h2 id="061-2018-09-13"><a href="https://github.com/xivapi/angular-client/compare/v0.6.0...v0.6.1">0.6.1</a> (2018-09-13)</h2>
+<h3 id="bug-fixes-23">Bug Fixes</h3>
+<ul>
+<li>fixed an issue with search filters not being applied at all (<a href="https://github.com/xivapi/angular-client/commit/77050f5">77050f5</a>)</li>
+</ul>
+<p><a name="0.6.0"></a></p>
+<h1 id="060-2018-09-03"><a href="https://github.com/xivapi/angular-client/compare/v0.5.2...v0.6.0">0.6.0</a> (2018-09-03)</h1>
+<h3 id="features-13">Features</h3>
+<ul>
+<li>support for pvp team and schema updates (<a href="https://github.com/xivapi/angular-client/commit/4689264">4689264</a>)</li>
+</ul>
+<p><a name="0.5.2"></a></p>
+<h2 id="052-2018-09-01"><a href="https://github.com/xivapi/angular-client/compare/v0.5.1...v0.5.2">0.5.2</a> (2018-09-01)</h2>
+<h3 id="bug-fixes-24">Bug Fixes</h3>
+<ul>
+<li>update Character schema to follow api updates (<a href="https://github.com/xivapi/angular-client/commit/13acf73">13acf73</a>)</li>
+</ul>
+<p><a name="0.5.1"></a></p>
+<h2 id="051-2018-09-01"><a href="https://github.com/xivapi/angular-client/compare/v0.5.0...v0.5.1">0.5.1</a> (2018-09-01)</h2>
+<h3 id="bug-fixes-25">Bug Fixes</h3>
+<ul>
+<li>fixed an issue with server param error in character search (<a href="https://github.com/xivapi/angular-client/commit/4856ce8">4856ce8</a>)</li>
+</ul>
+<p><a name="0.5.0"></a></p>
+<h1 id="050-2018-09-01"><a href="https://github.com/xivapi/angular-client/compare/v0.4.1...v0.5.0">0.5.0</a> (2018-09-01)</h1>
+<h3 id="features-14">Features</h3>
+<ul>
+<li>add support for character search query, including server listing (<a href="https://github.com/xivapi/angular-client/commit/1215f7c">1215f7c</a>)</li>
+</ul>
+<p><a name="0.4.1"></a></p>
+<h2 id="041-2018-08-27"><a href="https://github.com/xivapi/angular-client/compare/v0.4.0...v0.4.1">0.4.1</a> (2018-08-27)</h2>
+<h3 id="bug-fixes-26">Bug Fixes</h3>
+<ul>
+<li>fix a stupid typo in package.json that wat breaking imports (<a href="https://github.com/xivapi/angular-client/commit/772bb7c">772bb7c</a>)</li>
+</ul>
+<p><a name="0.4.0"></a></p>
+<h1 id="040-2018-08-26">0.4.0 (2018-08-26)</h1>
+<h3 id="bug-fixes-27">Bug Fixes</h3>
+<ul>
+<li>fixed an error with AOT build (<a href="https://github.com/xivapi/angular-client/commit/ff4ec8e">ff4ec8e</a>)</li>
+<li>import failing in app.module.ts files (<a href="https://github.com/xivapi/angular-client/commit/3cdbe62">3cdbe62</a>)</li>
+<li>update schemas to follow breaking changes introduced in the API (<a href="https://github.com/xivapi/angular-client/commit/8e58e7b">8e58e7b</a>)</li>
+</ul>
+<h3 id="features-15">Features</h3>
+<ul>
+<li>implement new filters in search request (<a href="https://github.com/xivapi/angular-client/commit/a15834f">a15834f</a>)</li>
+<li>implemented all endpoints described in docs as of v1.27.8 (<a href="https://github.com/xivapi/angular-client/commit/170394b">170394b</a>)</li>
+<li>support for /Character endpoint (<a href="https://github.com/xivapi/angular-client/commit/238c604">238c604</a>)</li>
+<li>support for new filter operators (<a href="https://github.com/xivapi/angular-client/commit/6ac0a9e">6ac0a9e</a>)</li>
+</ul>
+<p><a name="0.3.0"></a></p>
+<h1 id="030-2018-08-10"><a href="https://github.com/xivapi/angular-client/compare/v0.2.0...v0.3.0">0.3.0</a> (2018-08-10)</h1>
+<h3 id="features-16">Features</h3>
+<ul>
+<li>support for /Character endpoint (<a href="https://github.com/xivapi/angular-client/commit/238c604">238c604</a>)</li>
+</ul>
+<p><a name="0.2.0"></a></p>
+<h1 id="020-2018-08-03">0.2.0 (2018-08-03)</h1>
+<h3 id="bug-fixes-28">Bug Fixes</h3>
+<ul>
+<li>fixed an error with AOT build (<a href="https://github.com/xivapi/angular-client/commit/ff4ec8e">ff4ec8e</a>)</li>
+</ul>
+<h3 id="features-17">Features</h3>
+<ul>
+<li>implement new filters in search request (<a href="https://github.com/xivapi/angular-client/commit/a15834f">a15834f</a>)</li>
+<li>implemented all endpoints described in docs as of v1.27.8 (<a href="https://github.com/xivapi/angular-client/commit/170394b">170394b</a>)</li>
+<li>support for new filter operators (<a href="https://github.com/xivapi/angular-client/commit/6ac0a9e">6ac0a9e</a>)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'changelog.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
