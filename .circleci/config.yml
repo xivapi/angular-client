@@ -15,13 +15,13 @@ jobs:
               command: echo ${CIRCLE_BRANCH}
         - restore_cache:
               keys:
-              - v1-dependencies-{{ checksum "package.json" }}
+              - v1-dependencies-{{ checksum "yarn.lock" }}
               - v1-dependencies-
         - run:
               name: Install local dependencies
-              command: npm install
+              command: yarn install --immutable
         - save_cache:
-              key: v1-dependencies-{{ checksum "package.json" }}
+              key: v1-dependencies-{{ checksum "yarn.lock" }}
               paths:
               - node_modules
         - persist_to_workspace:
@@ -37,10 +37,7 @@ jobs:
               at: /tmp
         - run:
               name: Testing
-              command: npm run test
-        - run:
-              name: Codecov upload
-              command: npm run codecov
+              command: yarn test
 
 
     build:
@@ -50,7 +47,7 @@ jobs:
               at: /tmp
         - run:
               name: Building
-              command: npm run build
+              command: yarn build
         - save_cache:
               key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
               paths:
@@ -68,7 +65,7 @@ jobs:
               at: /tmp
         - run:
               name: Generating docs
-              command: npm run compodoc:build
+              command: yarn compodoc:build
         - run:
               name: Avoid hosts unknown for github.com
               command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
