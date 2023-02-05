@@ -1,0 +1,33 @@
+{
+  "name": "@xivapi/angular-client",
+  "version": "1.8.1",
+  "description": "xivapi client library (service and models) for angular applications",
+  "author": "Supamiu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xivapi/angular-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xivapi/angular-client/issues"
+  },
+  "homepage": "https://github.com/xivapi/angular-client#readme",
+  "keywords": [
+    "xivapi",
+    "angular"
+  ],
+  "exports": {
+    "./model": {
+      "types": "./model.d.ts",
+      "node": "./empty.js",
+      "default": "./model.d.ts"
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
